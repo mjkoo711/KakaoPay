@@ -9,5 +9,9 @@
 import Foundation
 
 class CurrentlyWeather {
-  
+  let data: WeatherData
+
+  init(weatherData: WeatherData) {
+    data = weatherData
+  }
 }
