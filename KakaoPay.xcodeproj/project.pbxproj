@@ -14,6 +14,14 @@
 		80CDEAEA22F1F3830065A8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEAE822F1F3830065A8A3 /* LaunchScreen.storyboard */; };
 		80CDEAF522F1F3830065A8A3 /* KakaoPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEAF422F1F3830065A8A3 /* KakaoPayTests.swift */; };
 		80CDEB0022F1F3830065A8A3 /* KakaoPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEAFF22F1F3830065A8A3 /* KakaoPayUITests.swift */; };
+		E2213C3322F27B0D00042491 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3222F27B0D00042491 /* Request.swift */; };
+		E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3422F27B3800042491 /* WeatherRequest.swift */; };
+		E2213C3822F27B7C00042491 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3722F27B7C00042491 /* Weather.swift */; };
+		E2213C3B22F27B9100042491 /* CurrentlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3A22F27B9100042491 /* CurrentlyWeather.swift */; };
+		E2213C3D22F27BA500042491 /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3C22F27BA500042491 /* HourlyWeather.swift */; };
+		E2213C3F22F27BBD00042491 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3E22F27BBD00042491 /* DailyWeather.swift */; };
+		E2213C4222F27C6800042491 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4122F27C6800042491 /* Const.swift */; };
+		E2213C4422F27FC400042491 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4322F27FC400042491 /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		80CDEAFB22F1F3830065A8A3 /* KakaoPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KakaoPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CDEAFF22F1F3830065A8A3 /* KakaoPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoPayUITests.swift; sourceTree = "<group>"; };
 		80CDEB0122F1F3830065A8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2213C3222F27B0D00042491 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E2213C3422F27B3800042491 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
+		E2213C3722F27B7C00042491 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E2213C3A22F27B9100042491 /* CurrentlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyWeather.swift; sourceTree = "<group>"; };
+		E2213C3C22F27BA500042491 /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
+		E2213C3E22F27BBD00042491 /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
+		E2213C4122F27C6800042491 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		E2213C4322F27FC400042491 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,9 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
+				E2213C4022F27C3F00042491 /* Const */,
+				E2213C3622F27B6D00042491 /* Model */,
+				E2213C3122F27AF700042491 /* Network */,
 				80CDEADF22F1F3820065A8A3 /* AppDelegate.swift */,
 				80CDEAE122F1F3820065A8A3 /* ViewController.swift */,
 				80CDEAE322F1F3820065A8A3 /* Main.storyboard */,
@@ -123,6 +142,35 @@
 				80CDEB0122F1F3830065A8A3 /* Info.plist */,
 			);
 			path = KakaoPayUITests;
+			sourceTree = "<group>";
+		};
+		E2213C3122F27AF700042491 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2213C3222F27B0D00042491 /* Request.swift */,
+				E2213C3422F27B3800042491 /* WeatherRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E2213C3622F27B6D00042491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2213C3722F27B7C00042491 /* Weather.swift */,
+				E2213C3A22F27B9100042491 /* CurrentlyWeather.swift */,
+				E2213C3C22F27BA500042491 /* HourlyWeather.swift */,
+				E2213C3E22F27BBD00042491 /* DailyWeather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2213C4022F27C3F00042491 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				E2213C4122F27C6800042491 /* Const.swift */,
+				E2213C4322F27FC400042491 /* Key.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2213C3F22F27BBD00042491 /* DailyWeather.swift in Sources */,
+				E2213C4422F27FC400042491 /* Key.swift in Sources */,
+				E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */,
 				80CDEAE222F1F3820065A8A3 /* ViewController.swift in Sources */,
+				E2213C3322F27B0D00042491 /* Request.swift in Sources */,
 				80CDEAE022F1F3820065A8A3 /* AppDelegate.swift in Sources */,
+				E2213C3B22F27B9100042491 /* CurrentlyWeather.swift in Sources */,
+				E2213C3822F27B7C00042491 /* Weather.swift in Sources */,
+				E2213C3D22F27BA500042491 /* HourlyWeather.swift in Sources */,
+				E2213C4222F27C6800042491 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

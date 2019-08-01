@@ -12,6 +12,17 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    loadWeather(latitude: 37.0, longitude: 127.0)
+  }
+
+  func loadWeather(latitude: Double, longitude: Double) {
+    let request = WeatherRequest()
+    request.loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
+      // TODO
+    }, onFailure: { (error) in
+      // TODO
+    })
   }
 }
 
