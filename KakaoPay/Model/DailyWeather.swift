@@ -9,10 +9,10 @@
 import Foundation
 
 class DailyWeather {
-  let iconName: String
+  let iconName: String?
   let hourlyData: [WeatherData]
 
-  init(iconName: String, hourlyData: [WeatherData]) {
+  init(iconName: String?, hourlyData: [WeatherData]) {
     self.iconName = iconName
     self.hourlyData = hourlyData
   }
