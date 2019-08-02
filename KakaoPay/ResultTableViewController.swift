@@ -16,11 +16,18 @@ class ResultTableViewController: UITableViewController {
     super.viewDidLoad()
   }
 
-  func parseAddress(selectedItem: MKPlacemark) -> String {
-    let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
-    let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil) || (selectedItem.administrativeArea != nil) ? ", " : ""
-    let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
-    let addressLine = String(format: "%@%@%@%@%@%@%@", selectedItem.subThoroughfare ?? "", firstSpace, selectedItem.thoroughfare ?? "", comma, selectedItem.locality ?? "", secondSpace, selectedItem.administrativeArea ?? "")
+  func parseAddress(selectedItemPlacemark: MKPlacemark) -> String {
+    let placemark = selectedItemPlacemark
+    let subThoroughfare = placemark.subThoroughfare
+    let thoroughfare = placemark.thoroughfare
+    let subAdministrativeArea = placemark.subAdministrativeArea
+    let administrativeArea = placemark.administrativeArea
+    let locality = placemark.locality
+
+    let firstSpace = (subThoroughfare != nil && thoroughfare != nil) ? " " : ""
+    let comma = (subThoroughfare != nil || thoroughfare != nil) && (subAdministrativeArea != nil) || (administrativeArea != nil) ? ", " : ""
+    let secondSpace = (subAdministrativeArea != nil && administrativeArea != nil) ? " " : ""
+    let addressLine = String(format: "%@%@%@%@%@%@%@", subThoroughfare ?? "", firstSpace, thoroughfare ?? "", comma, locality ?? "", secondSpace, administrativeArea ?? "")
     return addressLine
   }
 }
@@ -32,9 +39,9 @@ extension ResultTableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell")!
-    let selectedItem = matchingItems[indexPath.row].placemark
-    cell.textLabel?.text = selectedItem.name
-    cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
+    let selectedItemPlacemark = matchingItems[indexPath.row].placemark
+    cell.textLabel?.text = selectedItemPlacemark.name
+    cell.detailTextLabel?.text = parseAddress(selectedItemPlacemark: selectedItemPlacemark)
     return cell
   }
 }
