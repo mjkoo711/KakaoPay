@@ -34,7 +34,7 @@ class Parser {
     for data in datas {
       weatherDatas.append(parseWeatherData(response: data))
     }
-    return DailyWeather(iconName: icon, hourlyData: weatherDatas)
+    return DailyWeather(iconName: icon, dailyData: weatherDatas)
   }
 
   private func parseWeatherData(response: [String: Any]) -> WeatherData {

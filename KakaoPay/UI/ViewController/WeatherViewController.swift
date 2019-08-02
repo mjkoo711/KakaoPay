@@ -36,8 +36,12 @@ class WeatherViewController: UIViewController {
     if let latitude = latitude, let longitude = longitude {
       WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
         // TODO
-        self.weather = weather
         DispatchQueue.main.async {
+          if let _ = weather.dailyWeather.dailyData.first {
+            let temperature = weather.dailyWeather.dailyData.removeFirst()
+            self.minMaxTemperatureLabel.text = "\(temperature.temperatureMax ?? 0) / \(temperature.temperatureMin ?? 0)"
+          }
+          self.weather = weather
           self.setCurrentWeatherData(weather: weather.currentlyWeather)
           self.tableView.reloadData()
         }
@@ -54,6 +58,7 @@ class WeatherViewController: UIViewController {
     currentStateLabel.text = current.iconName // TODO: iconName에 맞는 이름으로 변환
     if let icon = current.iconName { weatherImageView.image = UIImage(named: icon) }
     currentTemperatureLabel.text = "\(current.temperature ?? 0)"
+    
     //    minMaxTemperatureLabel.text =  // TODO: 이건 daily의 첫번쨰에서 해결
     humidityLabel.text = "\(current.humidity ?? 0)"
     precipProbabilityLabel.text = "\(current.precipProbability ?? 0)"
@@ -90,7 +95,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
       return 122
     } else if indexPath.row == 1 {
       guard let weather = weather else { return 0 }
-      let count = weather.dailyWeather.hourlyData.count
+      let count = weather.dailyWeather.dailyData.count
       return (CGFloat(54 * count + 4 * count))
     }
     return 0
