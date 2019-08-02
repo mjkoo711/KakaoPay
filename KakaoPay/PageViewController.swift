@@ -81,7 +81,13 @@ extension PageViewController: ResultTableViewControllerDelegate {
   func addPlace(latitude: Double, longitude: Double) {
     resultSearchController?.searchBar.text = nil
     print("KOOMINJUN")
-    // TODO: latitude, longitude 받아서 viewController 추가하기
+    orderedViewControllers.append(getNewViewController(latitude: latitude, longitude: longitude))
+
+    if let lastViewController = orderedViewControllers.last {
+      setViewControllers([lastViewController], direction: .reverse, animated: true, completion: nil)
+      pageControl.numberOfPages = orderedViewControllers.count
+      pageControl.currentPage = orderedViewControllers.count
+    }
   }
 }
 

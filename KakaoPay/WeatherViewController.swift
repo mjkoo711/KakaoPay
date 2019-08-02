@@ -20,6 +20,8 @@ class WeatherViewController: UIViewController {
         view.backgroundColor = .red
       } else if latitude == 1.0 {
         view.backgroundColor = .blue
+      } else {
+        view.backgroundColor = .green
       }
     }
   }
