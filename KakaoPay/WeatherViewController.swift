@@ -14,7 +14,7 @@ class WeatherViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // TODO: 날씨에 따라서 배경도 다르게
+    // 여기서도 똑같이 설정해줘야 자연스럽네
     if let latitude = latitude {
       if latitude == 0.0 {
         view.backgroundColor = .red

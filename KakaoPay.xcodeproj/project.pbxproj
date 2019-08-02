@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		80CDEAE022F1F3820065A8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEADF22F1F3820065A8A3 /* AppDelegate.swift */; };
-		80CDEAE222F1F3820065A8A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEAE122F1F3820065A8A3 /* ViewController.swift */; };
 		80CDEAE522F1F3820065A8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEAE322F1F3820065A8A3 /* Main.storyboard */; };
 		80CDEAE722F1F3830065A8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEAE622F1F3830065A8A3 /* Assets.xcassets */; };
 		80CDEAEA22F1F3830065A8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEAE822F1F3830065A8A3 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,7 @@
 		E2D2A0D522F3DE990055735D /* KPLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A0D422F3DE990055735D /* KPLocationManager.swift */; };
 		E2D2A0D722F3E5820055735D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A0D622F3E5820055735D /* PageViewController.swift */; };
 		E2D2A0D922F3E6850055735D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A0D822F3E6850055735D /* WeatherViewController.swift */; };
+		E2D2A0DB22F4181E0055735D /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A0DA22F4181E0055735D /* ResultTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* Begin PBXFileReference section */
 		80CDEADC22F1F3820065A8A3 /* KakaoPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CDEADF22F1F3820065A8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80CDEAE122F1F3820065A8A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80CDEAE422F1F3820065A8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80CDEAE622F1F3830065A8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80CDEAE922F1F3830065A8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		E2D2A0D422F3DE990055735D /* KPLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPLocationManager.swift; sourceTree = "<group>"; };
 		E2D2A0D622F3E5820055735D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E2D2A0D822F3E6850055735D /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		E2D2A0DA22F4181E0055735D /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,13 +131,13 @@
 				E2213C3622F27B6D00042491 /* Model */,
 				E2213C3122F27AF700042491 /* Network */,
 				80CDEADF22F1F3820065A8A3 /* AppDelegate.swift */,
-				80CDEAE122F1F3820065A8A3 /* ViewController.swift */,
 				80CDEAE322F1F3820065A8A3 /* Main.storyboard */,
 				80CDEAE622F1F3830065A8A3 /* Assets.xcassets */,
 				80CDEAE822F1F3830065A8A3 /* LaunchScreen.storyboard */,
 				80CDEAEB22F1F3830065A8A3 /* Info.plist */,
 				E2D2A0D622F3E5820055735D /* PageViewController.swift */,
 				E2D2A0D822F3E6850055735D /* WeatherViewController.swift */,
+				E2D2A0DA22F4181E0055735D /* ResultTableViewController.swift */,
 			);
 			path = KakaoPay;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D2A0DB22F4181E0055735D /* ResultTableViewController.swift in Sources */,
 				E2213C3F22F27BBD00042491 /* DailyWeather.swift in Sources */,
 				E2213C4722F282F500042491 /* Parser.swift in Sources */,
 				E2213C4422F27FC400042491 /* Key.swift in Sources */,
 				E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */,
-				80CDEAE222F1F3820065A8A3 /* ViewController.swift in Sources */,
 				E2D2A0D922F3E6850055735D /* WeatherViewController.swift in Sources */,
 				E2D2A0D522F3DE990055735D /* KPLocationManager.swift in Sources */,
 				E2D2A0D722F3E5820055735D /* PageViewController.swift in Sources */,

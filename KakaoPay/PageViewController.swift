@@ -21,18 +21,40 @@ class PageViewController: UIPageViewController {
             getNewViewController(latitude: 1.0, longitude: 0.0)]
   }()
 
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   var pageControl = UIPageControl()
+  var resultSearchController: UISearchController? = nil
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setSearchBar()
+    KPLocationManager.sharedManager.checkLocationServices()
     self.delegate = self
     self.dataSource = self
-
     configurePageControl()
 
     if let firstViewController = orderedViewControllers.first {
       setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
     }
+  }
+
+  private func setSearchBar() {
+    let locationSearchTableViewController =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultTableViewController") as! ResultTableViewController
+    resultSearchController = UISearchController(searchResultsController: locationSearchTableViewController)
+    resultSearchController?.searchResultsUpdater = locationSearchTableViewController
+
+    let searchBar = resultSearchController?.searchBar
+    searchBar?.sizeToFit()
+    searchBar?.placeholder = "Search for places"
+    navigationItem.titleView = resultSearchController?.searchBar
+
+    resultSearchController?.hidesNavigationBarDuringPresentation = false
+    resultSearchController?.dimsBackgroundDuringPresentation = true
+    definesPresentationContext = true
+
   }
 
   private func getNewViewController(latitude: Double, longitude: Double) -> WeatherViewController {
@@ -80,5 +102,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     let pageContentViewController = pageViewController.viewControllers![0]
     pageControl.currentPage = orderedViewControllers.firstIndex(of: pageContentViewController)!
+
+    // TODO: pageController의 backgroundColor 여기서 설정
   }
 }
