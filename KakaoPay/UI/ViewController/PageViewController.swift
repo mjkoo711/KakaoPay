@@ -17,9 +17,11 @@ import UIKit
 
 class PageViewController: UIPageViewController {
   lazy var orderedViewControllers: [UIViewController] = {
+    // TODO: 위치 정보 접속 가능하면 현재 위치 날씨 보여주기 + a
+    // TODO: 위치 정보 접속 불가능하면 위치 허용해달라고 첫화면에 보여주기
     return [getNewViewController(latitude: 0.0, longitude: 0.0),
             getNewViewController(latitude: 1.0, longitude: 0.0)]
-  }()
+  }() 
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -105,11 +107,8 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
     let nextIndex = index + 1
     let totalCount = orderedViewControllers.count
 
-
     guard totalCount != nextIndex else { return nil }
-
     guard totalCount > nextIndex else { return nil }
-
 
     return orderedViewControllers[nextIndex]
   }

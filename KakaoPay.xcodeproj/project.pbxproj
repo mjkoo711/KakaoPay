@@ -13,6 +13,20 @@
 		80CDEAEA22F1F3830065A8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEAE822F1F3830065A8A3 /* LaunchScreen.storyboard */; };
 		80CDEAF522F1F3830065A8A3 /* KakaoPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEAF422F1F3830065A8A3 /* KakaoPayTests.swift */; };
 		80CDEB0022F1F3830065A8A3 /* KakaoPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEAFF22F1F3830065A8A3 /* KakaoPayUITests.swift */; };
+		80CDEB0E22F476C00065A8A3 /* TodayForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB0D22F476C00065A8A3 /* TodayForecastTableViewCell.swift */; };
+		80CDEB1022F4773B0065A8A3 /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB0F22F4773B0065A8A3 /* DailyForecastTableViewCell.swift */; };
+		80CDEB1C22F479D00065A8A3 /* sleet.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1222F479D00065A8A3 /* sleet.png */; };
+		80CDEB1D22F479D00065A8A3 /* fog.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1322F479D00065A8A3 /* fog.png */; };
+		80CDEB1E22F479D00065A8A3 /* partly-cloudy-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1422F479D00065A8A3 /* partly-cloudy-night.png */; };
+		80CDEB1F22F479D00065A8A3 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1522F479D00065A8A3 /* clear.png */; };
+		80CDEB2022F479D00065A8A3 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1622F479D00065A8A3 /* snow.png */; };
+		80CDEB2122F479D00065A8A3 /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1722F479D00065A8A3 /* wind.png */; };
+		80CDEB2222F479D00065A8A3 /* clear-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1822F479D00065A8A3 /* clear-night.png */; };
+		80CDEB2322F479D00065A8A3 /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1922F479D00065A8A3 /* cloudy.png */; };
+		80CDEB2422F479D00065A8A3 /* partly-cloudy-day.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1A22F479D00065A8A3 /* partly-cloudy-day.png */; };
+		80CDEB2522F479D00065A8A3 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB1B22F479D00065A8A3 /* rain.png */; };
+		80CDEB2A22F47A6E0065A8A3 /* TodayForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB2922F47A6E0065A8A3 /* TodayForecastCollectionViewCell.swift */; };
+		80CDEB2C22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB2B22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift */; };
 		E2213C3322F27B0D00042491 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3222F27B0D00042491 /* Request.swift */; };
 		E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3422F27B3800042491 /* WeatherRequest.swift */; };
 		E2213C3822F27B7C00042491 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3722F27B7C00042491 /* Weather.swift */; };
@@ -60,6 +74,20 @@
 		80CDEAFB22F1F3830065A8A3 /* KakaoPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KakaoPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CDEAFF22F1F3830065A8A3 /* KakaoPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoPayUITests.swift; sourceTree = "<group>"; };
 		80CDEB0122F1F3830065A8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80CDEB0D22F476C00065A8A3 /* TodayForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayForecastTableViewCell.swift; sourceTree = "<group>"; };
+		80CDEB0F22F4773B0065A8A3 /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
+		80CDEB1222F479D00065A8A3 /* sleet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleet.png; sourceTree = "<group>"; };
+		80CDEB1322F479D00065A8A3 /* fog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog.png; sourceTree = "<group>"; };
+		80CDEB1422F479D00065A8A3 /* partly-cloudy-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-night.png"; sourceTree = "<group>"; };
+		80CDEB1522F479D00065A8A3 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
+		80CDEB1622F479D00065A8A3 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
+		80CDEB1722F479D00065A8A3 /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
+		80CDEB1822F479D00065A8A3 /* clear-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-night.png"; sourceTree = "<group>"; };
+		80CDEB1922F479D00065A8A3 /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
+		80CDEB1A22F479D00065A8A3 /* partly-cloudy-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-day.png"; sourceTree = "<group>"; };
+		80CDEB1B22F479D00065A8A3 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
+		80CDEB2922F47A6E0065A8A3 /* TodayForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		80CDEB2B22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2213C3222F27B0D00042491 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E2213C3422F27B3800042491 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		E2213C3722F27B7C00042491 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -125,7 +153,9 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
-				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
+				80CDEB2D22F47CB70065A8A3 /* UI */,
+				80CDEB2822F47A410065A8A3 /* Manager */,
+				80CDEB1122F479D00065A8A3 /* Image */,
 				E2213C4522F282E900042491 /* Parser */,
 				E2213C4022F27C3F00042491 /* Const */,
 				E2213C3622F27B6D00042491 /* Model */,
@@ -135,9 +165,6 @@
 				80CDEAE622F1F3830065A8A3 /* Assets.xcassets */,
 				80CDEAE822F1F3830065A8A3 /* LaunchScreen.storyboard */,
 				80CDEAEB22F1F3830065A8A3 /* Info.plist */,
-				E2D2A0D622F3E5820055735D /* PageViewController.swift */,
-				E2D2A0D822F3E6850055735D /* WeatherViewController.swift */,
-				E2D2A0DA22F4181E0055735D /* ResultTableViewController.swift */,
 			);
 			path = KakaoPay;
 			sourceTree = "<group>";
@@ -158,6 +185,61 @@
 				80CDEB0122F1F3830065A8A3 /* Info.plist */,
 			);
 			path = KakaoPayUITests;
+			sourceTree = "<group>";
+		};
+		80CDEB1122F479D00065A8A3 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				80CDEB1222F479D00065A8A3 /* sleet.png */,
+				80CDEB1322F479D00065A8A3 /* fog.png */,
+				80CDEB1422F479D00065A8A3 /* partly-cloudy-night.png */,
+				80CDEB1522F479D00065A8A3 /* clear.png */,
+				80CDEB1622F479D00065A8A3 /* snow.png */,
+				80CDEB1722F479D00065A8A3 /* wind.png */,
+				80CDEB1822F479D00065A8A3 /* clear-night.png */,
+				80CDEB1922F479D00065A8A3 /* cloudy.png */,
+				80CDEB1A22F479D00065A8A3 /* partly-cloudy-day.png */,
+				80CDEB1B22F479D00065A8A3 /* rain.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		80CDEB2622F47A1D0065A8A3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2A0D622F3E5820055735D /* PageViewController.swift */,
+				E2D2A0D822F3E6850055735D /* WeatherViewController.swift */,
+				E2D2A0DA22F4181E0055735D /* ResultTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		80CDEB2722F47A2C0065A8A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				80CDEB0D22F476C00065A8A3 /* TodayForecastTableViewCell.swift */,
+				80CDEB2922F47A6E0065A8A3 /* TodayForecastCollectionViewCell.swift */,
+				80CDEB0F22F4773B0065A8A3 /* DailyForecastTableViewCell.swift */,
+				80CDEB2B22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		80CDEB2822F47A410065A8A3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		80CDEB2D22F47CB70065A8A3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				80CDEB2722F47A2C0065A8A3 /* Cell */,
+				80CDEB2622F47A1D0065A8A3 /* ViewController */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		E2213C3122F27AF700042491 /* Network */ = {
@@ -303,8 +385,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CDEB2222F479D00065A8A3 /* clear-night.png in Resources */,
+				80CDEB1E22F479D00065A8A3 /* partly-cloudy-night.png in Resources */,
 				80CDEAEA22F1F3830065A8A3 /* LaunchScreen.storyboard in Resources */,
+				80CDEB2122F479D00065A8A3 /* wind.png in Resources */,
+				80CDEB2422F479D00065A8A3 /* partly-cloudy-day.png in Resources */,
+				80CDEB2022F479D00065A8A3 /* snow.png in Resources */,
+				80CDEB2322F479D00065A8A3 /* cloudy.png in Resources */,
+				80CDEB2522F479D00065A8A3 /* rain.png in Resources */,
+				80CDEB1F22F479D00065A8A3 /* clear.png in Resources */,
+				80CDEB1C22F479D00065A8A3 /* sleet.png in Resources */,
 				80CDEAE722F1F3830065A8A3 /* Assets.xcassets in Resources */,
+				80CDEB1D22F479D00065A8A3 /* fog.png in Resources */,
 				80CDEAE522F1F3820065A8A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +424,8 @@
 			files = (
 				E2D2A0DB22F4181E0055735D /* ResultTableViewController.swift in Sources */,
 				E2213C3F22F27BBD00042491 /* DailyWeather.swift in Sources */,
+				80CDEB1022F4773B0065A8A3 /* DailyForecastTableViewCell.swift in Sources */,
+				80CDEB2C22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift in Sources */,
 				E2213C4722F282F500042491 /* Parser.swift in Sources */,
 				E2213C4422F27FC400042491 /* Key.swift in Sources */,
 				E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */,
@@ -345,7 +439,9 @@
 				E2213C3822F27B7C00042491 /* Weather.swift in Sources */,
 				E2213C3D22F27BA500042491 /* HourlyWeather.swift in Sources */,
 				E2213C4922F2849000042491 /* WeatherData.swift in Sources */,
+				80CDEB2A22F47A6E0065A8A3 /* TodayForecastCollectionViewCell.swift in Sources */,
 				E2213C4222F27C6800042491 /* Const.swift in Sources */,
+				80CDEB0E22F476C00065A8A3 /* TodayForecastTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
