@@ -124,8 +124,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpJ-Su-X7T">
                                             <rect key="frame" x="8" y="80" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-zj-Nk4">
-                                                    <rect key="frame" x="8" y="8" width="25" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강수확률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-zj-Nk4">
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -150,8 +150,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lF1-to-e5E">
                                             <rect key="frame" x="8" y="152" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXV-vW-CXk">
-                                                    <rect key="frame" x="8" y="8" width="25" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체감온도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXV-vW-CXk">
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -176,7 +176,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-Nu-Sqk">
                                             <rect key="frame" x="8" y="224" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uc-vh-cPG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기압" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uc-vh-cPG">
                                                     <rect key="frame" x="8" y="8" width="25" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -202,8 +202,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbz-RR-Cog">
                                             <rect key="frame" x="196" y="8" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSP-MP-fhS">
-                                                    <rect key="frame" x="8" y="8" width="25" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바람세기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSP-MP-fhS">
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -228,8 +228,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuK-J7-Uyg">
                                             <rect key="frame" x="196" y="80" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAV-sx-ru3">
-                                                    <rect key="frame" x="8" y="8" width="25" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바람방향" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAV-sx-ru3">
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -254,8 +254,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtX-eV-Xx9">
                                             <rect key="frame" x="196" y="152" width="171" height="64"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3z-Sa-SoG">
-                                                    <rect key="frame" x="8" y="8" width="25" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자외선지수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3z-Sa-SoG">
+                                                    <rect key="frame" x="8" y="8" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -338,7 +338,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayForecastTableViewCell" rowHeight="122" id="BMI-X2-Zhw" customClass="TodayForecastTableViewCell" customModule="KakaoPay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourlyForecastTableViewCell" rowHeight="122" id="BMI-X2-Zhw" customClass="HourlyForecastTableViewCell" customModule="KakaoPay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="474.5" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BMI-X2-Zhw" id="ZId-2K-0ED">
@@ -347,7 +347,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PH5-cY-yvs">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="4" minimumInteritemSpacing="4" id="lDH-m4-8FS">
                                                         <size key="itemSize" width="84" height="122"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -355,7 +355,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodayForecastCollectionViewCell" id="2lf-Ej-P61" customClass="TodayForecastCollectionViewCell" customModule="KakaoPay" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyForecastCollectionViewCell" id="2lf-Ej-P61" customClass="HourlyForecastCollectionViewCell" customModule="KakaoPay" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="-0.5" width="84" height="122"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -401,6 +401,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="PH5-cY-yvs" firstAttribute="leading" secondItem="ZId-2K-0ED" secondAttribute="leading" id="USl-RU-Sdx"/>
                                                 <constraint firstItem="PH5-cY-yvs" firstAttribute="top" secondItem="ZId-2K-0ED" secondAttribute="top" id="gP5-mA-Ol4"/>
@@ -408,6 +409,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="PH5-cY-yvs" secondAttribute="bottom" id="sNE-14-pBi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="collectionView" destination="PH5-cY-yvs" id="Qcd-Rz-gvY"/>
                                         </connections>
@@ -454,7 +456,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-night.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vah-SR-IQB">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vah-SR-IQB">
                                                                         <rect key="frame" x="171.5" y="11" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Vah-SR-IQB" secondAttribute="height" multiplier="1:1" id="I6s-I1-mPC"/>
@@ -477,8 +479,9 @@
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="dateLabel" destination="nGA-5V-42H" id="saL-9Y-zch"/>
-                                                                <outlet property="highTemperatureLabel" destination="7Xl-nD-I6o" id="Ged-xx-gIt"/>
-                                                                <outlet property="lowTemperatureLabel" destination="Q7n-x7-0GA" id="aVX-mY-ngt"/>
+                                                                <outlet property="maxTemperatureLabel" destination="7Xl-nD-I6o" id="Ged-xx-gIt"/>
+                                                                <outlet property="minTemperatureLabel" destination="Q7n-x7-0GA" id="aVX-mY-ngt"/>
+                                                                <outlet property="weatherImageView" destination="Vah-SR-IQB" id="EE7-fx-dpP"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -512,6 +515,22 @@
                         <viewLayoutGuide key="safeArea" id="G9i-f7-Gjo"/>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="apparentTemperatureLabel" destination="pOL-gI-Fw3" id="uRO-2f-Mpz"/>
+                        <outlet property="currentStateLabel" destination="8N7-NI-IhV" id="fMI-M0-TMB"/>
+                        <outlet property="currentTemperatureLabel" destination="6DV-D8-gVv" id="qYe-XW-bIl"/>
+                        <outlet property="humidityLabel" destination="fEj-nH-Iju" id="1hH-AV-83K"/>
+                        <outlet property="minMaxTemperatureLabel" destination="wMk-gL-LPr" id="nXp-uy-dOG"/>
+                        <outlet property="precipProbabilityLabel" destination="dQk-pU-uSg" id="g07-xB-4yO"/>
+                        <outlet property="pressureLabel" destination="Kr8-gh-mNq" id="cO4-Ut-q2Q"/>
+                        <outlet property="regionLabel" destination="SWI-A7-OQg" id="IFW-zG-BHE"/>
+                        <outlet property="tableView" destination="HfM-ow-708" id="Jvs-bF-tAg"/>
+                        <outlet property="uvIndexLabel" destination="yVe-1J-OIs" id="QTL-7c-IzM"/>
+                        <outlet property="visibilityLabel" destination="RDG-Mn-qVt" id="Kek-mx-e5V"/>
+                        <outlet property="weatherImageView" destination="bSb-vf-QPz" id="Lei-jk-o96"/>
+                        <outlet property="windBearingLabel" destination="Rda-T2-s1K" id="zIz-67-f7p"/>
+                        <outlet property="windSpeedLabel" destination="h9F-R9-dkQ" id="2yS-YG-3go"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbN-ej-rPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

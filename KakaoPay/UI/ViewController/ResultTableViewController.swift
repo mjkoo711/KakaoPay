@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol ResultTableViewControllerDelegate {
-  func addPlace(latitude: Double, longitude: Double)
+  func addPlace(latitude: Double, longitude: Double, region: String)
 }
 
 class ResultTableViewController: UITableViewController {
@@ -50,7 +50,7 @@ extension ResultTableViewController {
       guard let response = response else { return }
       let latitude = response.mapItems[0].placemark.coordinate.latitude
       let longitude = response.mapItems[0].placemark.coordinate.longitude
-      self.delegate?.addPlace(latitude: latitude, longitude: longitude)
+      self.delegate?.addPlace(latitude: latitude, longitude: longitude, region: self.searchResults[indexPath.row].title)
       self.dismiss(animated: true, completion: nil)
     }
   }

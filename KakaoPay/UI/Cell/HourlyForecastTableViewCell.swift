@@ -1,5 +1,5 @@
 //
-//  TodayForecastTableViewCell.swift
+//  HourlyForecastTableViewCell.swift
 //  KakaoPay
 //
 //  Created by 구민준 on 02/08/2019.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TodayForecastTableViewCell: UITableViewCell {
+class HourlyForecastTableViewCell: UITableViewCell {
   @IBOutlet weak var collectionView: UICollectionView!
+  var hourlyWeather: HourlyWeather?
   
   override func awakeFromNib() {
     super.awakeFromNib()
     collectionView.delegate = self
     collectionView.dataSource = self
-    // Initialization code
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,19 +25,29 @@ class TodayForecastTableViewCell: UITableViewCell {
   }
 }
 
-extension TodayForecastTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HourlyForecastTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // TODO
-    return 10
+    guard let weather = hourlyWeather else { return 0 }
+    return weather.hourlyData.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayForecastCollectionViewCell", for: indexPath) as! TodayForecastCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyForecastCollectionViewCell", for: indexPath) as! HourlyForecastCollectionViewCell
+    guard let weather = hourlyWeather else { return cell }
+    let data = weather.hourlyData[indexPath.row]
+    
+    cell.timeLabel.text = "\(data.time ?? 0)"
+    cell.temperatureLabel.text = "\(data.temperature ?? 0)"
+    cell.weatherImageView.image = UIImage(named: data.iconName ?? "")
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("KOO")
   }
 }
 
-extension TodayForecastTableViewCell: UICollectionViewDelegateFlowLayout {
+extension HourlyForecastTableViewCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: 84, height: 120) // 122가 되면 warning이 뜨네,,
   }

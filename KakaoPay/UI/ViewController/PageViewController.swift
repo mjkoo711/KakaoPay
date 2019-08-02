@@ -17,10 +17,7 @@ import UIKit
 
 class PageViewController: UIPageViewController {
   lazy var orderedViewControllers: [UIViewController] = {
-    // TODO: 위치 정보 접속 가능하면 현재 위치 날씨 보여주기 + a
-    // TODO: 위치 정보 접속 불가능하면 위치 허용해달라고 첫화면에 보여주기
-    return [getNewViewController(latitude: 0.0, longitude: 0.0),
-            getNewViewController(latitude: 1.0, longitude: 0.0)]
+    return []
   }() 
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -61,11 +58,12 @@ class PageViewController: UIPageViewController {
 
   }
 
-  private func getNewViewController(latitude: Double, longitude: Double) -> WeatherViewController {
+  private func getNewViewController(latitude: Double, longitude: Double, region: String) -> WeatherViewController {
     let weatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
 
     weatherViewController.latitude = latitude
     weatherViewController.longitude = longitude
+    weatherViewController.region = region
     return weatherViewController
   }
 
@@ -81,10 +79,9 @@ class PageViewController: UIPageViewController {
 }
 
 extension PageViewController: ResultTableViewControllerDelegate {
-  func addPlace(latitude: Double, longitude: Double) {
+  func addPlace(latitude: Double, longitude: Double, region: String) {
     resultSearchController?.searchBar.text = nil
-    print("KOOMINJUN : \(latitude), \(longitude)")
-    orderedViewControllers.append(getNewViewController(latitude: latitude, longitude: longitude))
+    orderedViewControllers.append(getNewViewController(latitude: latitude, longitude: longitude, region: region))
 
     if let lastViewController = orderedViewControllers.last {
       setViewControllers([lastViewController], direction: .reverse, animated: true, completion: nil)

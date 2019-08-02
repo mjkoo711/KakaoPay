@@ -11,19 +11,58 @@ import UIKit
 class WeatherViewController: UIViewController {
   var latitude: Double?
   var longitude: Double?
-
+  var region: String = ""
+  private var weather: Weather?
+  
+  @IBOutlet weak var regionLabel: UILabel!
+  @IBOutlet weak var currentStateLabel: UILabel!
+  @IBOutlet weak var weatherImageView: UIImageView!
+  @IBOutlet weak var currentTemperatureLabel: UILabel!
+  @IBOutlet weak var minMaxTemperatureLabel: UILabel!
+  
+  @IBOutlet weak var humidityLabel: UILabel!
+  @IBOutlet weak var precipProbabilityLabel: UILabel!
+  @IBOutlet weak var apparentTemperatureLabel: UILabel!
+  @IBOutlet weak var pressureLabel: UILabel!
+  @IBOutlet weak var windSpeedLabel: UILabel!
+  @IBOutlet weak var windBearingLabel: UILabel!
+  @IBOutlet weak var uvIndexLabel: UILabel!
+  @IBOutlet weak var visibilityLabel: UILabel!
+  
+  @IBOutlet weak var tableView: UITableView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // 여기서도 똑같이 설정해줘야 자연스럽네
-//    if let latitude = latitude {
-//      if latitude == 0.0 {
-//        view.backgroundColor = .red
-//      } else if latitude == 1.0 {
-//        view.backgroundColor = .blue
-//      } else {
-//        view.backgroundColor = .green
-//      }
-//    }
+    if let latitude = latitude, let longitude = longitude {
+      WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
+        // TODO
+        self.weather = weather
+        DispatchQueue.main.async {
+          self.setCurrentWeatherData(weather: weather.currentlyWeather)
+          self.tableView.reloadData()
+        }
+      }, onFailure: { (error) in
+        if let error = error { print(error.localizedDescription) }
+      })
+    }
+  }
+  
+  private func setCurrentWeatherData(weather: CurrentlyWeather) {
+    let current = weather.data
+    
+    regionLabel.text = region
+    currentStateLabel.text = current.iconName // TODO: iconName에 맞는 이름으로 변환
+    if let icon = current.iconName { weatherImageView.image = UIImage(named: icon) }
+    currentTemperatureLabel.text = "\(current.temperature ?? 0)"
+    //    minMaxTemperatureLabel.text =  // TODO: 이건 daily의 첫번쨰에서 해결
+    humidityLabel.text = "\(current.humidity ?? 0)"
+    precipProbabilityLabel.text = "\(current.precipProbability ?? 0)"
+    apparentTemperatureLabel.text = "\(current.apparentTemperature ?? 0)"
+    pressureLabel.text = "\(current.pressure ?? 0)"
+    windSpeedLabel.text = "\(current.windSpeed ?? 0)"
+    windBearingLabel.text = "\(current.windBearing ?? 0)" // TODO: 숫자에 따라 방향으로 바꾸기
+    uvIndexLabel.text = "\(current.uvIndex ?? 0)"
+    visibilityLabel.text = "\(current.visibility ?? 0)"
   }
 }
 
@@ -33,21 +72,24 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var cell: UITableViewCell = UITableViewCell(frame: CGRect.zero)
-    
     if indexPath.row == 0 {
-      cell = tableView.dequeueReusableCell(withIdentifier: "TodayForecastTableViewCell") as! TodayForecastTableViewCell
-    } else if indexPath.row == 1 {
-      cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastTableViewCell") as! DailyForecastTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyForecastTableViewCell") as! HourlyForecastTableViewCell
+      cell.hourlyWeather = weather?.hourlyWeather
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastTableViewCell") as! DailyForecastTableViewCell
+      cell.dailyWeather = weather?.dailyWeather
+      return cell
     }
-    return cell
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if indexPath.row == 0 {
       return 122
     } else if indexPath.row == 1 {
-      return 54 * 8 + 4 * 8
+      guard let weather = weather else { return 0 }
+      let count = weather.dailyWeather.hourlyData.count
+      return (CGFloat(54 * count + 4 * count))
     }
     return 0
   }

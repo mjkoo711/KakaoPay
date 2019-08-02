@@ -1,5 +1,5 @@
 //
-//  TodayForecastCollectionViewCell.swift
+//  HourlyForecastCollectionViewCell.swift
 //  KakaoPay
 //
 //  Created by 구민준 on 02/08/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayForecastCollectionViewCell: UICollectionViewCell {
+class HourlyForecastCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var weatherImageView: UIImageView!
   @IBOutlet weak var temperatureLabel: UILabel!

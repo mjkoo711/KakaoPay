@@ -9,8 +9,8 @@
 import UIKit
 
 class DailyForecastTableViewCell: UITableViewCell {
-  
   @IBOutlet weak var collectionView: UICollectionView!
+  var dailyWeather: DailyWeather?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -28,12 +28,20 @@ class DailyForecastTableViewCell: UITableViewCell {
 
 extension DailyForecastTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // TODO
-    return 8
+    guard let weather = dailyWeather else { return 0 }
+    return weather.hourlyData.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DailyForecastCollectionViewCell", for: indexPath) as! DailyForecastCollectionViewCell
+    guard let weather = dailyWeather else { return cell }
+    let data = weather.hourlyData[indexPath.row]
+    
+    cell.dateLabel.text = "\(data.time ?? 0)"
+    cell.minTemperatureLabel.text = "\(data.temperatureMin ?? 0)"
+    cell.maxTemperatureLabel.text = "\(data.temperatureMax ?? 0)"
+    cell.weatherImageView.image = UIImage(named: data.iconName ?? "")
+    
     return cell
   }
   
