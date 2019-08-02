@@ -32,6 +32,7 @@ class KPLocationManager: NSObject {
   }
 
   func getLocation() -> Location? {
+    locationManager.requestLocation()
     guard let location = locationManager.location else { return nil }
     return Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
   }
