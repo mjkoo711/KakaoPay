@@ -15,15 +15,15 @@ class WeatherViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // 여기서도 똑같이 설정해줘야 자연스럽네
-    if let latitude = latitude {
-      if latitude == 0.0 {
-        view.backgroundColor = .red
-      } else if latitude == 1.0 {
-        view.backgroundColor = .blue
-      } else {
-        view.backgroundColor = .green
-      }
-    }
+//    if let latitude = latitude {
+//      if latitude == 0.0 {
+//        view.backgroundColor = .red
+//      } else if latitude == 1.0 {
+//        view.backgroundColor = .blue
+//      } else {
+//        view.backgroundColor = .green
+//      }
+//    }
   }
 }
 

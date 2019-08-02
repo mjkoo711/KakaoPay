@@ -36,3 +36,9 @@ extension TodayForecastTableViewCell: UICollectionViewDelegate, UICollectionView
     return cell
   }
 }
+
+extension TodayForecastTableViewCell: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 84, height: 120) // 122가 되면 warning이 뜨네,,
+  }
+}

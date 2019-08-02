@@ -32,6 +32,7 @@ class PageViewController: UIPageViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     setSearchBar()
     KPLocationManager.sharedManager.checkLocationServices()
     self.delegate = self

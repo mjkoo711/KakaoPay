@@ -85,7 +85,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="61F-Xg-bBR">
-                                    <rect key="frame" x="0.0" y="668.5" width="375" height="298"/>
+                                    <rect key="frame" x="0.0" y="669.5" width="375" height="298"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5v-6e-IAY">
@@ -338,15 +338,15 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayForecastTableViewCell" rowHeight="121" id="BMI-X2-Zhw" customClass="TodayForecastTableViewCell" customModule="KakaoPay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="474.5" width="375" height="121"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayForecastTableViewCell" rowHeight="122" id="BMI-X2-Zhw" customClass="TodayForecastTableViewCell" customModule="KakaoPay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="474.5" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BMI-X2-Zhw" id="ZId-2K-0ED">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PH5-cY-yvs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PH5-cY-yvs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="4" minimumInteritemSpacing="4" id="lDH-m4-8FS">
                                                         <size key="itemSize" width="84" height="122"/>
@@ -356,7 +356,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodayForecastCollectionViewCell" id="2lf-Ej-P61" customClass="TodayForecastCollectionViewCell" customModule="KakaoPay" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-1" width="84" height="122"/>
+                                                            <rect key="frame" x="0.0" y="-0.5" width="84" height="122"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="122"/>
@@ -413,7 +413,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastTableViewCell" rowHeight="55" id="wah-QE-xoU" customClass="DailyForecastTableViewCell" customModule="KakaoPay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="595.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="596.5" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wah-QE-xoU" id="nda-X5-Lje">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
