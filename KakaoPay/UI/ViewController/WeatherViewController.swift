@@ -75,10 +75,12 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     if indexPath.row == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyForecastTableViewCell") as! HourlyForecastTableViewCell
       cell.hourlyWeather = weather?.hourlyWeather
+      cell.collectionView.reloadData()
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastTableViewCell") as! DailyForecastTableViewCell
       cell.dailyWeather = weather?.dailyWeather
+      cell.collectionView.reloadData()
       return cell
     }
   }
@@ -94,4 +96,3 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     return 0
   }
 }
-
