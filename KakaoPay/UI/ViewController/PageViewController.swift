@@ -84,7 +84,7 @@ extension PageViewController: ResultTableViewControllerDelegate {
     orderedViewControllers.append(getNewViewController(latitude: latitude, longitude: longitude, region: region))
 
     if let lastViewController = orderedViewControllers.last {
-      setViewControllers([lastViewController], direction: .reverse, animated: true, completion: nil)
+      setViewControllers([lastViewController], direction: .reverse, animated: false, completion: nil)
       pageControl.numberOfPages = orderedViewControllers.count
       pageControl.currentPage = orderedViewControllers.count
     }

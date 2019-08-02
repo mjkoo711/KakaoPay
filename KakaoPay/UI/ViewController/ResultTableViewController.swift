@@ -66,8 +66,6 @@ extension ResultTableViewController: UISearchResultsUpdating {
 extension ResultTableViewController: MKLocalSearchCompleterDelegate {
   func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
     searchResults = completer.results.filter { $0.subtitle.count == 0 }
-    if searchResults.count != 0 {
-      tableView.reloadData()
-    }
+    tableView.reloadData()
   }
 }

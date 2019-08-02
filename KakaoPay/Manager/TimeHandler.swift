@@ -16,4 +16,15 @@ class TimeHandler {
     dateFormatter.dateFormat = "MM.dd"
     return dateFormatter.string(from: date)
   }
+  
+  func convertTimeStampToHour(timeStamp: Int) -> String {
+    let date = Date(timeIntervalSince1970: Double(timeStamp))
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = NSLocale.current
+    dateFormatter.dateFormat = "a h시"
+    dateFormatter.amSymbol = "오전"
+    dateFormatter.pmSymbol = "오후"
+    
+    return dateFormatter.string(from: date)
+  }
 }

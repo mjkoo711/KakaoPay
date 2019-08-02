@@ -35,12 +35,14 @@ class WeatherViewController: UIViewController {
     super.viewDidLoad()
     if let latitude = latitude, let longitude = longitude {
       WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
-        // TODO
         DispatchQueue.main.async {
           if let _ = weather.dailyWeather.dailyData.first {
             let temperature = weather.dailyWeather.dailyData.removeFirst()
-            self.minMaxTemperatureLabel.text = "\(temperature.temperatureMax ?? 0) / \(temperature.temperatureMin ?? 0)"
+            self.minMaxTemperatureLabel.text = "\(temperature.temperatureMax ?? 0)°C / \(temperature.temperatureMin ?? 0)°C"
           }
+          
+          weather.hourlyWeather.hourlyData.remove(at: 0)
+          
           self.weather = weather
           self.setCurrentWeatherData(weather: weather.currentlyWeather)
           self.tableView.reloadData()
@@ -55,19 +57,17 @@ class WeatherViewController: UIViewController {
     let current = weather.data
     
     regionLabel.text = region
-    currentStateLabel.text = current.iconName // TODO: iconName에 맞는 이름으로 변환
+    currentStateLabel.text = WeatherStateHandler().changeToString(icon: current.iconName ?? "")
     if let icon = current.iconName { weatherImageView.image = UIImage(named: icon) }
-    currentTemperatureLabel.text = "\(current.temperature ?? 0)"
-    
-    //    minMaxTemperatureLabel.text =  // TODO: 이건 daily의 첫번쨰에서 해결
-    humidityLabel.text = "\(current.humidity ?? 0)"
-    precipProbabilityLabel.text = "\(current.precipProbability ?? 0)"
-    apparentTemperatureLabel.text = "\(current.apparentTemperature ?? 0)"
-    pressureLabel.text = "\(current.pressure ?? 0)"
-    windSpeedLabel.text = "\(current.windSpeed ?? 0)"
-    windBearingLabel.text = "\(current.windBearing ?? 0)" // TODO: 숫자에 따라 방향으로 바꾸기
+    currentTemperatureLabel.text = "\(current.temperature ?? 0)°C"
+    humidityLabel.text = "\(current.humidity ?? 0)%"
+    precipProbabilityLabel.text = "\(current.precipProbability ?? 0)%"
+    apparentTemperatureLabel.text = "\(current.apparentTemperature ?? 0)°C"
+    pressureLabel.text = "\(current.pressure ?? 0)hPa"
+    windSpeedLabel.text = "\(current.windSpeed ?? 0)m/s"
+    windBearingLabel.text = WeatherStateHandler().changeWindBearingToDirection(windBearing: current.windBearing ?? 0)
     uvIndexLabel.text = "\(current.uvIndex ?? 0)"
-    visibilityLabel.text = "\(current.visibility ?? 0)"
+    visibilityLabel.text = "\(current.visibility ?? 0)Km"
   }
 }
 

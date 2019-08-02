@@ -28,7 +28,7 @@ class HourlyForecastTableViewCell: UITableViewCell {
 extension HourlyForecastTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     guard let weather = hourlyWeather else { return 0 }
-    return weather.hourlyData.count
+    return weather.hourlyData.count - 24 // 너무 많아서 임의로 줄임.
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -36,8 +36,8 @@ extension HourlyForecastTableViewCell: UICollectionViewDelegate, UICollectionVie
     guard let weather = hourlyWeather else { return cell }
     let data = weather.hourlyData[indexPath.row]
     
-    cell.timeLabel.text = "\(data.time ?? 0)"
-    cell.temperatureLabel.text = "\(data.temperature ?? 0)"
+    cell.timeLabel.text = TimeHandler().convertTimeStampToHour(timeStamp: data.time ?? 0)
+    cell.temperatureLabel.text = "\(data.temperature ?? 0)°C"
     cell.weatherImageView.image = UIImage(named: data.iconName ?? "")
     return cell
   }

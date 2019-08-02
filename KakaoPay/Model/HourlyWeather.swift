@@ -10,7 +10,7 @@ import Foundation
 
 class HourlyWeather {
   let iconName: String?
-  let hourlyData: [WeatherData]
+  var hourlyData: [WeatherData]
 
   init(iconName: String?, hourlyData: [WeatherData]) {
     self.iconName = iconName

@@ -35,8 +35,8 @@ extension DailyForecastTableViewCell: UICollectionViewDataSource, UICollectionVi
     let data = weather.dailyData[indexPath.row]
     
     cell.dateLabel.text = TimeHandler().convertTimeStampToMonthDay(timeStamp: data.time ?? 0)
-    cell.minTemperatureLabel.text = "\(data.temperatureMin ?? 0)"
-    cell.maxTemperatureLabel.text = "\(data.temperatureMax ?? 0)"
+    cell.minTemperatureLabel.text = "\(data.temperatureMin ?? 0)°C"
+    cell.maxTemperatureLabel.text = "\(data.temperatureMax ?? 0)°C"
     cell.weatherImageView.image = UIImage(named: data.iconName ?? "")
     
     return cell
