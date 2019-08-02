@@ -9,8 +9,13 @@
 import UIKit
 import MapKit
 
+protocol ResultTableViewControllerDelegate {
+  func addPlace(latitude: Double, longitude: Double)
+}
+
 class ResultTableViewController: UITableViewController {
   var matchingItems: [MKMapItem] = []
+  var delegate: ResultTableViewControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +48,14 @@ extension ResultTableViewController {
     cell.textLabel?.text = selectedItemPlacemark.name
     cell.detailTextLabel?.text = parseAddress(selectedItemPlacemark: selectedItemPlacemark)
     return cell
+  }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedItem = matchingItems[indexPath.row]
+    let latitude = selectedItem.placemark.coordinate.latitude
+    let longitude = selectedItem.placemark.coordinate.longitude
+    delegate?.addPlace(latitude: latitude, longitude: longitude)
+    dismiss(animated: true, completion: nil)
   }
 }
 

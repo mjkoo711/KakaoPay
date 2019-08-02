@@ -43,6 +43,7 @@ class PageViewController: UIPageViewController {
 
   private func setSearchBar() {
     let locationSearchTableViewController =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultTableViewController") as! ResultTableViewController
+    locationSearchTableViewController.delegate = self
     resultSearchController = UISearchController(searchResultsController: locationSearchTableViewController)
     resultSearchController?.searchResultsUpdater = locationSearchTableViewController
 
@@ -73,6 +74,14 @@ class PageViewController: UIPageViewController {
     pageControl.pageIndicatorTintColor = .lightGray
     pageControl.currentPageIndicatorTintColor = .blue
     view.addSubview(pageControl)
+  }
+}
+
+extension PageViewController: ResultTableViewControllerDelegate {
+  func addPlace(latitude: Double, longitude: Double) {
+    resultSearchController?.searchBar.text = nil
+    print("KOOMINJUN")
+    // TODO: latitude, longitude 받아서 viewController 추가하기
   }
 }
 
