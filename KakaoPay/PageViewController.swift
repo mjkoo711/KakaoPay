@@ -80,7 +80,7 @@ class PageViewController: UIPageViewController {
 extension PageViewController: ResultTableViewControllerDelegate {
   func addPlace(latitude: Double, longitude: Double) {
     resultSearchController?.searchBar.text = nil
-    print("KOOMINJUN")
+    print("KOOMINJUN : \(latitude), \(longitude)")
     orderedViewControllers.append(getNewViewController(latitude: latitude, longitude: longitude))
 
     if let lastViewController = orderedViewControllers.last {
