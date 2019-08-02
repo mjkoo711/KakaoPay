@@ -12,8 +12,10 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    loadWeather(latitude: 37.0, longitude: 127.0)
+    KPLocationManager.sharedManager.checkLocationServices()
+    // TODO : 만약 리스트가 없다면, 검색하게하고
+    // TODO : 리스트가 있다면, 그 것을 보여주자 PageController로 보여주는 것이 제일 무난할듯
+//    loadWeather(latitude: 37.0, longitude: 127.0)
   }
 
   func loadWeather(latitude: Double, longitude: Double) {

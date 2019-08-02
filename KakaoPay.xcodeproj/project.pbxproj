@@ -24,6 +24,8 @@
 		E2213C4422F27FC400042491 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4322F27FC400042491 /* Key.swift */; };
 		E2213C4722F282F500042491 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4622F282F500042491 /* Parser.swift */; };
 		E2213C4922F2849000042491 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4822F2849000042491 /* WeatherData.swift */; };
+		E2213C4D22F2E9BD00042491 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C4C22F2E9BD00042491 /* Location.swift */; };
+		E2D2A0D522F3DE990055735D /* KPLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A0D422F3DE990055735D /* KPLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E2213C4322F27FC400042491 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		E2213C4622F282F500042491 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		E2213C4822F2849000042491 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		E2213C4C22F2E9BD00042491 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E2D2A0D422F3DE990055735D /* KPLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
+				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
 				E2213C4522F282E900042491 /* Parser */,
 				E2213C4022F27C3F00042491 /* Const */,
 				E2213C3622F27B6D00042491 /* Model */,
@@ -166,6 +171,7 @@
 				E2213C3C22F27BA500042491 /* HourlyWeather.swift */,
 				E2213C3E22F27BBD00042491 /* DailyWeather.swift */,
 				E2213C4822F2849000042491 /* WeatherData.swift */,
+				E2213C4C22F2E9BD00042491 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,7 +329,9 @@
 				E2213C4422F27FC400042491 /* Key.swift in Sources */,
 				E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */,
 				80CDEAE222F1F3820065A8A3 /* ViewController.swift in Sources */,
+				E2D2A0D522F3DE990055735D /* KPLocationManager.swift in Sources */,
 				E2213C3322F27B0D00042491 /* Request.swift in Sources */,
+				E2213C4D22F2E9BD00042491 /* Location.swift in Sources */,
 				80CDEAE022F1F3820065A8A3 /* AppDelegate.swift in Sources */,
 				E2213C3B22F27B9100042491 /* CurrentlyWeather.swift in Sources */,
 				E2213C3822F27B7C00042491 /* Weather.swift in Sources */,
