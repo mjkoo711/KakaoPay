@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol WeatherViewControllerDelegate {
+  func removeFromPageViewController(vc viewController: UIViewController)
+}
+
 class WeatherViewController: UIViewController {
   var latitude: Double?
   var longitude: Double?
@@ -30,9 +34,19 @@ class WeatherViewController: UIViewController {
   @IBOutlet weak var visibilityLabel: UILabel!
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var deleteImageView: UIImageView!
+  
+  var delegate: WeatherViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadWeather()
+    let deleteImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(removeViewController))
+    deleteImageView.addGestureRecognizer(deleteImageTapGesture)
+    deleteImageView.isUserInteractionEnabled = true
+  }
+  
+  private func loadWeather() {
     if let latitude = latitude, let longitude = longitude {
       WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
         DispatchQueue.main.async {
@@ -68,6 +82,10 @@ class WeatherViewController: UIViewController {
     windBearingLabel.text = WeatherStateHandler().changeWindBearingToDirection(windBearing: current.windBearing ?? 0)
     uvIndexLabel.text = "\(current.uvIndex ?? 0)"
     visibilityLabel.text = "\(current.visibility ?? 0)Km"
+  }
+  
+  @objc private func removeViewController() {
+    delegate?.removeFromPageViewController(vc: self)
   }
 }
 

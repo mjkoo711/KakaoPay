@@ -64,10 +64,11 @@ class PageViewController: UIPageViewController {
     weatherViewController.latitude = latitude
     weatherViewController.longitude = longitude
     weatherViewController.region = region
+    weatherViewController.delegate = self
     return weatherViewController
   }
 
-  func configurePageControl() {
+  private func configurePageControl() {
     pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 60, width: UIScreen.main.bounds.width, height: 8))
     pageControl.numberOfPages = orderedViewControllers.count
     pageControl.currentPage = 0
@@ -75,6 +76,11 @@ class PageViewController: UIPageViewController {
     pageControl.pageIndicatorTintColor = .lightGray
     pageControl.currentPageIndicatorTintColor = .blue
     view.addSubview(pageControl)
+  }
+  
+  private func updatePageControl(numberOfPages: Int, currentPage: Int) {
+    pageControl.numberOfPages = numberOfPages
+    pageControl.currentPage = currentPage
   }
 }
 
@@ -85,8 +91,7 @@ extension PageViewController: ResultTableViewControllerDelegate {
 
     if let lastViewController = orderedViewControllers.last {
       setViewControllers([lastViewController], direction: .reverse, animated: false, completion: nil)
-      pageControl.numberOfPages = orderedViewControllers.count
-      pageControl.currentPage = orderedViewControllers.count
+      updatePageControl(numberOfPages: orderedViewControllers.count, currentPage: orderedViewControllers.count)
     }
   }
 }
@@ -116,5 +121,21 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
     pageControl.currentPage = orderedViewControllers.firstIndex(of: pageContentViewController)!
 
     // TODO: pageController의 backgroundColor 여기서 설정
+  }
+}
+
+extension PageViewController: WeatherViewControllerDelegate {
+  func removeFromPageViewController(vc viewController: UIViewController) {
+    guard let index = orderedViewControllers.firstIndex(of: viewController) else { return }
+    orderedViewControllers.remove(at: index)
+    
+    if let firstViewController = orderedViewControllers.first {
+      setViewControllers([firstViewController], direction: .forward, animated: false) { (bool) in
+        self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
+      }
+    } else {
+      setViewControllers([PageViewController()], direction: .forward, animated: false)
+      updatePageControl(numberOfPages: 0, currentPage: 0)
+    }
   }
 }

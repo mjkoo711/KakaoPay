@@ -69,13 +69,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delete" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-5K-gzx">
+                                            <rect key="frame" x="343" y="8" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ojf-5K-gzx" secondAttribute="height" multiplier="1:1" id="RSO-9f-OHd"/>
+                                                <constraint firstAttribute="width" constant="24" id="a2T-XU-Lkp"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="6DV-D8-gVv" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="3ve-SB-lMe"/>
                                         <constraint firstItem="SWI-A7-OQg" firstAttribute="top" secondItem="hfj-AD-Jgj" secondAttribute="top" constant="48" id="6TM-aQ-C9Q"/>
                                         <constraint firstItem="6DV-D8-gVv" firstAttribute="top" secondItem="bSb-vf-QPz" secondAttribute="bottom" constant="32" id="7Xh-gA-umB"/>
+                                        <constraint firstItem="Ojf-5K-gzx" firstAttribute="top" secondItem="hfj-AD-Jgj" secondAttribute="top" constant="8" id="81f-2Z-Rm8"/>
                                         <constraint firstItem="bSb-vf-QPz" firstAttribute="top" secondItem="8N7-NI-IhV" secondAttribute="bottom" constant="24" id="HmD-Fe-x5g"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ojf-5K-gzx" secondAttribute="trailing" constant="8" id="IO7-0A-B2E"/>
                                         <constraint firstItem="8N7-NI-IhV" firstAttribute="top" secondItem="SWI-A7-OQg" secondAttribute="bottom" constant="4" id="MuF-eM-nhG"/>
                                         <constraint firstItem="wMk-gL-LPr" firstAttribute="top" secondItem="6DV-D8-gVv" secondAttribute="bottom" constant="4" id="NcF-vv-nAF"/>
                                         <constraint firstItem="SWI-A7-OQg" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="VVV-pe-wNN"/>
@@ -85,11 +94,11 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="61F-Xg-bBR">
-                                    <rect key="frame" x="0.0" y="652.5" width="375" height="298"/>
+                                    <rect key="frame" x="0.0" y="652.5" width="375" height="371"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5v-6e-IAY">
-                                            <rect key="frame" x="187" y="0.0" width="1" height="298"/>
+                                            <rect key="frame" x="187" y="0.0" width="1" height="371"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1" id="V1m-s3-xgK"/>
@@ -320,10 +329,11 @@
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="leading" secondItem="l1B-bT-1n1" secondAttribute="trailing" constant="8" id="M3b-47-Dlf"/>
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="leading" secondItem="lF1-to-e5E" secondAttribute="trailing" constant="8" id="Opy-es-bQr"/>
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="centerX" secondItem="61F-Xg-bBR" secondAttribute="centerX" id="QzL-m4-7L9"/>
-                                        <constraint firstAttribute="bottom" secondItem="L5v-6e-IAY" secondAttribute="bottom" id="Ym3-qM-7Jx"/>
+                                        <constraint firstAttribute="bottom" secondItem="3ww-Nu-Sqk" secondAttribute="bottom" constant="83" id="Sd1-Db-RLk"/>
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="leading" secondItem="3ww-Nu-Sqk" secondAttribute="trailing" constant="8" id="aZP-5b-2dt"/>
                                         <constraint firstItem="M9z-mw-IZb" firstAttribute="top" secondItem="OtX-eV-Xx9" secondAttribute="bottom" constant="8" id="acp-Qz-FQr"/>
                                         <constraint firstItem="lF1-to-e5E" firstAttribute="top" secondItem="SpJ-Su-X7T" secondAttribute="bottom" constant="8" id="c93-Tc-Js5"/>
+                                        <constraint firstAttribute="bottom" secondItem="M9z-mw-IZb" secondAttribute="bottom" constant="83" id="cYz-ee-KWx"/>
                                         <constraint firstItem="3ww-Nu-Sqk" firstAttribute="leading" secondItem="61F-Xg-bBR" secondAttribute="leading" constant="8" id="chp-0Y-Reg"/>
                                         <constraint firstAttribute="trailing" secondItem="M9z-mw-IZb" secondAttribute="trailing" constant="8" id="eHp-zF-LO5"/>
                                         <constraint firstItem="OtX-eV-Xx9" firstAttribute="leading" secondItem="L5v-6e-IAY" secondAttribute="trailing" constant="8" id="gXt-yR-BEE"/>
@@ -332,7 +342,6 @@
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="leading" secondItem="SpJ-Su-X7T" secondAttribute="trailing" constant="8" id="i38-Nq-8qb"/>
                                         <constraint firstItem="OtX-eV-Xx9" firstAttribute="top" secondItem="SuK-J7-Uyg" secondAttribute="bottom" constant="8" id="nZ9-eV-F8b"/>
                                         <constraint firstItem="SpJ-Su-X7T" firstAttribute="leading" secondItem="61F-Xg-bBR" secondAttribute="leading" constant="8" id="q3L-e1-Sg4"/>
-                                        <constraint firstAttribute="bottom" secondItem="3ww-Nu-Sqk" secondAttribute="bottom" constant="10" id="vUk-yJ-7Tt"/>
                                         <constraint firstItem="lF1-to-e5E" firstAttribute="leading" secondItem="61F-Xg-bBR" secondAttribute="leading" constant="8" id="w9N-Me-PI3"/>
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="top" secondItem="61F-Xg-bBR" secondAttribute="top" id="yFZ-zs-0lF"/>
                                     </constraints>
@@ -519,6 +528,7 @@
                         <outlet property="apparentTemperatureLabel" destination="pOL-gI-Fw3" id="uRO-2f-Mpz"/>
                         <outlet property="currentStateLabel" destination="8N7-NI-IhV" id="fMI-M0-TMB"/>
                         <outlet property="currentTemperatureLabel" destination="6DV-D8-gVv" id="qYe-XW-bIl"/>
+                        <outlet property="deleteImageView" destination="Ojf-5K-gzx" id="MW5-9t-L5T"/>
                         <outlet property="humidityLabel" destination="fEj-nH-Iju" id="1hH-AV-83K"/>
                         <outlet property="minMaxTemperatureLabel" destination="wMk-gL-LPr" id="nXp-uy-dOG"/>
                         <outlet property="precipProbabilityLabel" destination="dQk-pU-uSg" id="g07-xB-4yO"/>
@@ -600,6 +610,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Delete" width="24" height="24"/>
         <image name="clear-night.png" width="193" height="196"/>
     </resources>
 </document>
