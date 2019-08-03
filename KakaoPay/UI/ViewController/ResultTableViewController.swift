@@ -50,10 +50,10 @@ extension ResultTableViewController {
       guard let response = response else { return }
       let latitude = response.mapItems[0].placemark.coordinate.latitude
       let longitude = response.mapItems[0].placemark.coordinate.longitude
-      let manager = LocationManager()
+      let storage = LocationStorage()
       let newLocation = Location(latitude: latitude, longitude: longitude, region: region)
       
-      if manager.isExistLocation(location: newLocation) {
+      if storage.isExistLocation(location: newLocation) {
         self.dismiss(animated: true, completion: {
           let alertViewController = UIAlertController(title: "알림", message: "이미 존재하는 지역입니다. 새로고침 하여 확인해보세요", preferredStyle: .alert)
           let alertAction = UIAlertAction(title: "확인", style: .default)
@@ -63,7 +63,7 @@ extension ResultTableViewController {
           }
         })
       } else {
-        manager.saveLocation(location: newLocation)
+        storage.saveLocation(location: newLocation)
         self.delegate?.addPlace(latitude: latitude, longitude: longitude, region: region)
       }
       self.dismiss(animated: true, completion: nil)

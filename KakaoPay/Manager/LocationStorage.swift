@@ -1,5 +1,5 @@
 //
-//  LocationManager.swift
+//  LocationStorage.swift
 //  KakaoPay
 //
 //  Created by 구민준 on 03/08/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LocationManager {
+class LocationStorage {
   func saveLocation(location newLocation: Location) {
     var locations = loadLocations()
     
