@@ -115,6 +115,10 @@ class WeatherViewController: UIViewController {
   }
   
   @objc private func removeViewController() {
+    let manager = LocationManager()
+    if let latitude = latitude, let longitude = longitude {
+      manager.removeLocation(location: Location(latitude: latitude, longitude: longitude, region: region))
+    }
     delegate?.removeFromPageViewController(vc: self)
   }
 }

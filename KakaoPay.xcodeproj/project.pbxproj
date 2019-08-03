@@ -29,6 +29,8 @@
 		80CDEB3422F4A5E00065A8A3 /* clear-day.png in Resources */ = {isa = PBXBuildFile; fileRef = 80CDEB3322F4A5E00065A8A3 /* clear-day.png */; };
 		80CDEB3822F4AE950065A8A3 /* TimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */; };
 		80CDEB3A22F4BC5E0065A8A3 /* WeatherStateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */; };
+		80CDEB3C22F5CB260065A8A3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3B22F5CB260065A8A3 /* LocationManager.swift */; };
+		80CDEB3F22F5CC640065A8A3 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3E22F5CC640065A8A3 /* UserDefaultsExtensions.swift */; };
 		E2213C3322F27B0D00042491 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3222F27B0D00042491 /* Request.swift */; };
 		E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3422F27B3800042491 /* WeatherRequest.swift */; };
 		E2213C3822F27B7C00042491 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3722F27B7C00042491 /* Weather.swift */; };
@@ -92,6 +94,8 @@
 		80CDEB3322F4A5E00065A8A3 /* clear-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-day.png"; sourceTree = "<group>"; };
 		80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHandler.swift; sourceTree = "<group>"; };
 		80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStateHandler.swift; sourceTree = "<group>"; };
+		80CDEB3B22F5CB260065A8A3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		80CDEB3E22F5CC640065A8A3 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		E2213C3222F27B0D00042491 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E2213C3422F27B3800042491 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		E2213C3722F27B7C00042491 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
+				80CDEB3D22F5CC530065A8A3 /* Extensions */,
 				80CDEB2D22F47CB70065A8A3 /* UI */,
 				80CDEB2822F47A410065A8A3 /* Manager */,
 				80CDEB1122F479D00065A8A3 /* Image */,
@@ -235,6 +240,7 @@
 				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
 				80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */,
 				80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */,
+				80CDEB3B22F5CB260065A8A3 /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -246,6 +252,14 @@
 				80CDEB2622F47A1D0065A8A3 /* ViewController */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		80CDEB3D22F5CC530065A8A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80CDEB3E22F5CC640065A8A3 /* UserDefaultsExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E2213C3122F27AF700042491 /* Network */ = {
@@ -435,12 +449,14 @@
 				80CDEB2C22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift in Sources */,
 				E2213C4722F282F500042491 /* Parser.swift in Sources */,
 				E2213C4422F27FC400042491 /* Key.swift in Sources */,
+				80CDEB3C22F5CB260065A8A3 /* LocationManager.swift in Sources */,
 				E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */,
 				E2D2A0D922F3E6850055735D /* WeatherViewController.swift in Sources */,
 				80CDEB3822F4AE950065A8A3 /* TimeHandler.swift in Sources */,
 				E2D2A0D522F3DE990055735D /* KPLocationManager.swift in Sources */,
 				E2D2A0D722F3E5820055735D /* PageViewController.swift in Sources */,
 				E2213C3322F27B0D00042491 /* Request.swift in Sources */,
+				80CDEB3F22F5CC640065A8A3 /* UserDefaultsExtensions.swift in Sources */,
 				E2213C4D22F2E9BD00042491 /* Location.swift in Sources */,
 				80CDEAE022F1F3820065A8A3 /* AppDelegate.swift in Sources */,
 				E2213C3B22F27B9100042491 /* CurrentlyWeather.swift in Sources */,

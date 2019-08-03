@@ -17,7 +17,12 @@ import UIKit
 
 class PageViewController: UIPageViewController {
   lazy var orderedViewControllers: [UIViewController] = {
-    return []
+    let locations = LocationManager().loadLocations()
+    var viewControllers: [UIViewController] = []
+    for location in locations {
+      viewControllers.append(getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region))
+    }
+    return viewControllers
   }() 
 
   override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -42,7 +42,7 @@ extension ResultTableViewController {
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+    let region = searchResults[indexPath.row].title
     let request = MKLocalSearch.Request(completion: searchResults[indexPath.row])
     request.region = MKCoordinateRegion()
     let search = MKLocalSearch(request: request)
@@ -50,7 +50,22 @@ extension ResultTableViewController {
       guard let response = response else { return }
       let latitude = response.mapItems[0].placemark.coordinate.latitude
       let longitude = response.mapItems[0].placemark.coordinate.longitude
-      self.delegate?.addPlace(latitude: latitude, longitude: longitude, region: self.searchResults[indexPath.row].title)
+      let manager = LocationManager()
+      let newLocation = Location(latitude: latitude, longitude: longitude, region: region)
+      
+      if manager.isExistLocation(location: newLocation) {
+        self.dismiss(animated: true, completion: {
+          let alertViewController = UIAlertController(title: "알림", message: "이미 존재하는 지역입니다. 새로고침 하여 확인해보세요", preferredStyle: .alert)
+          let alertAction = UIAlertAction(title: "확인", style: .default)
+          alertViewController.addAction(alertAction)
+          if let topController = UIApplication.shared.keyWindow?.rootViewController {
+            topController.present(alertViewController, animated: true, completion: nil)
+          }
+        })
+      } else {
+        manager.saveLocation(location: newLocation)
+        self.delegate?.addPlace(latitude: latitude, longitude: longitude, region: region)
+      }
       self.dismiss(animated: true, completion: nil)
     }
   }
