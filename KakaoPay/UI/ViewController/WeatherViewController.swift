@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
   var longitude: Double?
   var region: String = ""
   private var weather: Weather?
+  private var refreshControl = UIRefreshControl()
   
   @IBOutlet weak var regionLabel: UILabel!
   @IBOutlet weak var currentStateLabel: UILabel!
@@ -43,12 +44,35 @@ class WeatherViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     loadWeather()
+    tableView.refreshControl = refreshControl
+    refreshControl.addTarget(self, action: #selector(refreshWeather), for: .valueChanged)
+    
     let deleteImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(removeViewController))
     deleteImageView.addGestureRecognizer(deleteImageTapGesture)
     deleteImageView.isUserInteractionEnabled = true
   }
   
-  private func loadWeather() {
+  @objc private func refreshWeather() {
+    guard let weather = weather else {
+      refreshControl.endRefreshing()
+      return
+    }
+    
+    guard let time = weather.currentlyWeather.data.time else {
+      refreshControl.endRefreshing()
+      return
+    }
+    
+    if TimeHandler().convertTimeStampToDateFormatter(timeStamp: time) != TimeHandler().convertTimeStampToDateFormatter(timeStamp: Int(Date().timeIntervalSince1970)) {
+      loadWeather {
+        self.refreshControl.endRefreshing()
+      }
+    } else {
+      refreshControl.endRefreshing()
+    }
+  }
+  
+  private func loadWeather(onSuccess: (() -> ())? = nil) {
     if let latitude = latitude, let longitude = longitude {
       WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
         DispatchQueue.main.async {
@@ -62,6 +86,9 @@ class WeatherViewController: UIViewController {
           self.weather = weather
           self.setCurrentWeatherData(weather: weather.currentlyWeather)
           self.tableView.reloadData()
+          if let onSuccess = onSuccess {
+            onSuccess()
+          }
         }
       }, onFailure: { (error) in
         if let error = error { print(error.localizedDescription) }
