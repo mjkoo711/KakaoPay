@@ -32,7 +32,7 @@ class TimeHandler {
     let date = Date(timeIntervalSince1970: Double(timeStamp))
     let dateFormatter = DateFormatter()
     dateFormatter.locale = .current
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:00"
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
     
     return dateFormatter.string(from: date)
   }

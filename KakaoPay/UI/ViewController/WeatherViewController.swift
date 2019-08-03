@@ -53,24 +53,13 @@ class WeatherViewController: UIViewController {
   }
   
   @objc private func refreshWeather() {
-    guard let weather = weather else {
-      refreshControl.endRefreshing()
-      return
+    // DarkSky API에서 cache를 한시간 동안 잡아주기 때문에 클라이언트에서 처리해주어야 할 필요 X
+    loadWeather {
+      self.refreshControl.endRefreshing()
     }
-    
-    guard let time = weather.currentlyWeather.data.time else {
-      refreshControl.endRefreshing()
-      return
-    }
-    
-    if TimeHandler().convertTimeStampToDateFormatter(timeStamp: time) != TimeHandler().convertTimeStampToDateFormatter(timeStamp: Int(Date().timeIntervalSince1970)) {
-      loadWeather {
-        self.refreshControl.endRefreshing()
-      }
-    } else {
-      refreshControl.endRefreshing()
-    }
+    refreshControl.endRefreshing()
   }
+
   
   private func loadWeather(onSuccess: (() -> ())? = nil) {
     if let latitude = latitude, let longitude = longitude {
@@ -95,7 +84,7 @@ class WeatherViewController: UIViewController {
       })
     }
   }
-  
+
   private func setCurrentWeatherData(weather: CurrentlyWeather) {
     let current = weather.data
     

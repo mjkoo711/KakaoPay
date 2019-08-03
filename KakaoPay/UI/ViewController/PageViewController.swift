@@ -54,7 +54,7 @@ class PageViewController: UIPageViewController {
 
     let searchBar = resultSearchController?.searchBar
     searchBar?.sizeToFit()
-    searchBar?.placeholder = "Search for places"
+    searchBar?.placeholder = "지역을 입력해보세요"
     navigationItem.titleView = resultSearchController?.searchBar
 
     resultSearchController?.hidesNavigationBarDuringPresentation = false
