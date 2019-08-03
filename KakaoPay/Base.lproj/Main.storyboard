@@ -98,7 +98,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5v-6e-IAY">
-                                            <rect key="frame" x="187" y="0.0" width="1" height="371"/>
+                                            <rect key="frame" x="187" y="0.0" width="1" height="288"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1" id="V1m-s3-xgK"/>
@@ -312,13 +312,24 @@
                                                 <constraint firstAttribute="bottom" secondItem="RDG-Mn-qVt" secondAttribute="bottom" constant="8" id="udy-6W-NTN"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvG-Ug-8zC">
+                                            <rect key="frame" x="8" y="320" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Pbz-RR-Cog" secondAttribute="trailing" constant="8" id="1cw-gn-n9c"/>
                                         <constraint firstItem="3ww-Nu-Sqk" firstAttribute="top" secondItem="lF1-to-e5E" secondAttribute="bottom" constant="8" id="2Sa-Jp-dz1"/>
+                                        <constraint firstAttribute="bottom" secondItem="CvG-Ug-8zC" secondAttribute="bottom" constant="30" id="2dy-L4-4aO"/>
                                         <constraint firstItem="M9z-mw-IZb" firstAttribute="leading" secondItem="L5v-6e-IAY" secondAttribute="trailing" constant="8" id="6Bl-qy-FOg"/>
                                         <constraint firstItem="Pbz-RR-Cog" firstAttribute="leading" secondItem="L5v-6e-IAY" secondAttribute="trailing" constant="8" id="6g5-YW-YE1"/>
+                                        <constraint firstItem="CvG-Ug-8zC" firstAttribute="leading" secondItem="61F-Xg-bBR" secondAttribute="leading" constant="8" id="Bc9-83-1NP"/>
+                                        <constraint firstAttribute="trailing" secondItem="CvG-Ug-8zC" secondAttribute="trailing" constant="8" id="DHd-2r-Oek"/>
+                                        <constraint firstItem="CvG-Ug-8zC" firstAttribute="top" secondItem="3ww-Nu-Sqk" secondAttribute="bottom" constant="32" id="FJv-mG-5dr"/>
+                                        <constraint firstAttribute="bottom" secondItem="L5v-6e-IAY" secondAttribute="bottom" constant="83" id="GKu-38-K9T"/>
                                         <constraint firstItem="SuK-J7-Uyg" firstAttribute="leading" secondItem="L5v-6e-IAY" secondAttribute="trailing" constant="8" id="HK7-BQ-4Gy"/>
                                         <constraint firstItem="l1B-bT-1n1" firstAttribute="top" secondItem="61F-Xg-bBR" secondAttribute="top" constant="8" id="JDb-Gq-U6L"/>
                                         <constraint firstAttribute="trailing" secondItem="OtX-eV-Xx9" secondAttribute="trailing" constant="8" id="JF5-IH-54S"/>
@@ -338,7 +349,6 @@
                                         <constraint firstAttribute="trailing" secondItem="M9z-mw-IZb" secondAttribute="trailing" constant="8" id="eHp-zF-LO5"/>
                                         <constraint firstItem="OtX-eV-Xx9" firstAttribute="leading" secondItem="L5v-6e-IAY" secondAttribute="trailing" constant="8" id="gXt-yR-BEE"/>
                                         <constraint firstItem="Pbz-RR-Cog" firstAttribute="top" secondItem="61F-Xg-bBR" secondAttribute="top" constant="8" id="gcw-aB-CJo"/>
-                                        <constraint firstItem="L5v-6e-IAY" firstAttribute="centerY" secondItem="61F-Xg-bBR" secondAttribute="centerY" id="gv2-aT-3Tf"/>
                                         <constraint firstItem="L5v-6e-IAY" firstAttribute="leading" secondItem="SpJ-Su-X7T" secondAttribute="trailing" constant="8" id="i38-Nq-8qb"/>
                                         <constraint firstItem="OtX-eV-Xx9" firstAttribute="top" secondItem="SuK-J7-Uyg" secondAttribute="bottom" constant="8" id="nZ9-eV-F8b"/>
                                         <constraint firstItem="SpJ-Su-X7T" firstAttribute="leading" secondItem="61F-Xg-bBR" secondAttribute="leading" constant="8" id="q3L-e1-Sg4"/>
@@ -530,6 +540,7 @@
                         <outlet property="currentTemperatureLabel" destination="6DV-D8-gVv" id="qYe-XW-bIl"/>
                         <outlet property="deleteImageView" destination="Ojf-5K-gzx" id="MW5-9t-L5T"/>
                         <outlet property="humidityLabel" destination="fEj-nH-Iju" id="1hH-AV-83K"/>
+                        <outlet property="lastUpdateTimeLabel" destination="CvG-Ug-8zC" id="JzT-P1-AYc"/>
                         <outlet property="minMaxTemperatureLabel" destination="wMk-gL-LPr" id="nXp-uy-dOG"/>
                         <outlet property="precipProbabilityLabel" destination="dQk-pU-uSg" id="g07-xB-4yO"/>
                         <outlet property="pressureLabel" destination="Kr8-gh-mNq" id="cO4-Ut-q2Q"/>

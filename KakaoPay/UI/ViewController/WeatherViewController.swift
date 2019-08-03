@@ -36,6 +36,8 @@ class WeatherViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var deleteImageView: UIImageView!
   
+  @IBOutlet weak var lastUpdateTimeLabel: UILabel!
+  
   var delegate: WeatherViewControllerDelegate?
   
   override func viewDidLoad() {
@@ -82,6 +84,7 @@ class WeatherViewController: UIViewController {
     windBearingLabel.text = WeatherStateHandler().changeWindBearingToDirection(windBearing: current.windBearing ?? 0)
     uvIndexLabel.text = "\(current.uvIndex ?? 0)"
     visibilityLabel.text = "\(current.visibility ?? 0)Km"
+    lastUpdateTimeLabel.text = "날씨 데이터 업데이트 시간 : " + TimeHandler().convertTimeStampToDateFormatter(timeStamp: current.time ?? 0)
   }
   
   @objc private func removeViewController() {
