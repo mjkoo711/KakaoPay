@@ -5,13 +5,6 @@
 //  Created by MinJun KOO on 02/08/2019.
 //  Copyright © 2019 mjkoo. All rights reserved.
 //
-//
-//  PageViewController.swift
-//  HoneyScreen
-//
-//  Created by MinJun KOO on 12/06/2019.
-//  Copyright © 2019 Buzzvil. All rights reserved.
-//
 
 import UIKit
 
