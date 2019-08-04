@@ -102,7 +102,7 @@ extension PageViewController: KPLocationManagerDelegate {
         setViewControllers([PageViewController()], direction: .forward, animated: false)
         updatePageControl(numberOfPages: 0, currentPage: 0)
       } else {
-        setViewControllers([firstViewController], direction: .forward, animated: false, completion: nil)
+        setViewControllers([orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
         updatePageControl(numberOfPages: orderedViewControllers.count, currentPage: 0)
       }
     }
