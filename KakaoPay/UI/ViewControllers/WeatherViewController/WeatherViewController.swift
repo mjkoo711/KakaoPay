@@ -18,8 +18,8 @@ class WeatherViewController: UIViewController {
   var region: String = ""
   var isCurrentLocation = false
   
-  private var weather: Weather?
-  private var refreshControl: UIRefreshControl?
+  internal var weather: Weather?
+  internal var refreshControl: UIRefreshControl?
   
   @IBOutlet weak var regionLabel: UILabel!
   @IBOutlet weak var currentStateLabel: UILabel!
@@ -57,7 +57,7 @@ class WeatherViewController: UIViewController {
     deleteImageView.isUserInteractionEnabled = true
   }
   
-  @objc private func refreshWeather() {
+  @objc internal func refreshWeather() {
     // DarkSky API에서 cache를 한시간 동안 잡아주기 때문에 클라이언트에서 처리해주어야 할 필요 X
     loadWeather {
       self.refreshControl?.endRefreshing()
@@ -66,7 +66,7 @@ class WeatherViewController: UIViewController {
   }
 
   
-  private func loadWeather(onSuccess: (() -> ())? = nil) {
+  internal func loadWeather(onSuccess: (() -> ())? = nil) {
     if let latitude = latitude, let longitude = longitude {
       WeatherRequest().loadWeather(latitude: latitude, longitude: longitude, onSuccess: { (weather) in
         DispatchQueue.main.async {
@@ -90,7 +90,7 @@ class WeatherViewController: UIViewController {
     }
   }
 
-  private func setCurrentWeatherData(weather: CurrentlyWeather) {
+  internal func setCurrentWeatherData(weather: CurrentlyWeather) {
     let current = weather.data
     
     regionLabel.text = region
@@ -108,42 +108,11 @@ class WeatherViewController: UIViewController {
     lastUpdateTimeLabel.text = "날씨 데이터 업데이트 시간 : " + TimeHandler().convertTimeStampToDateFormatter(timeStamp: current.time ?? 0)
   }
   
-  @objc private func removeViewController() {
+  @objc internal func removeViewController() {
     let handler = LocationHandler()
     if let latitude = latitude, let longitude = longitude {
       handler.removeLocation(location: Location(latitude: latitude, longitude: longitude, region: region))
     }
     delegate?.removeFromPageViewController(vc: self)
-  }
-}
-
-extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == 0 {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyForecastTableViewCell") as! HourlyForecastTableViewCell
-      cell.hourlyWeather = weather?.hourlyWeather
-      cell.collectionView.reloadData()
-      return cell
-    } else {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastTableViewCell") as! DailyForecastTableViewCell
-      cell.dailyWeather = weather?.dailyWeather
-      cell.collectionView.reloadData()
-      return cell
-    }
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if indexPath.row == 0 {
-      return 122
-    } else if indexPath.row == 1 {
-      guard let weather = weather else { return 0 }
-      let count = weather.dailyWeather.dailyData.count
-      return (CGFloat(54 * count + 4 * count))
-    }
-    return 0
   }
 }
