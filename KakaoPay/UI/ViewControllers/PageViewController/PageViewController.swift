@@ -10,14 +10,7 @@ import UIKit
 import CoreLocation
 
 class PageViewController: UIPageViewController {
-  lazy var orderedViewControllers: [UIViewController] = {
-    let locations = LocationHandler().loadLocations()
-    var viewControllers: [UIViewController] = []
-    for location in locations {
-      viewControllers.append(getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region))
-    }
-    return viewControllers
-  }() 
+  var orderedViewControllers: [UIViewController] = []
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -28,17 +21,27 @@ class PageViewController: UIPageViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
+    orderedViewControllers = loadOrderedViewControllers()
+    view.setGradientLayer()
     setSearchBar()
     KPLocationManager.sharedManager.delegate = self
     showCurrentLocationWeather()
     self.delegate = self
     self.dataSource = self
-    configurePageControl()
 
     if let firstViewController = orderedViewControllers.first {
       setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
     }
+    configurePageControl()
+  }
+  
+  private func loadOrderedViewControllers() -> [UIViewController] {
+    let locations = LocationHandler().loadLocations()
+    var viewControllers: [UIViewController] = []
+    for location in locations {
+    viewControllers.append(getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region))
+    }
+    return viewControllers
   }
 
   private func setSearchBar() {

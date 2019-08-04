@@ -46,6 +46,7 @@ class WeatherViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
     if isCurrentLocation {
       currentLocationLabel.text = "현재 위치"
       deleteImageView.image = nil

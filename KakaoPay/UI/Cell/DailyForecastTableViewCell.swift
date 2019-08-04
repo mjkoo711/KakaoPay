@@ -41,6 +41,10 @@ extension DailyForecastTableViewCell: UICollectionViewDataSource, UICollectionVi
     
     return cell
   }
-  
-  
+}
+
+extension DailyForecastTableViewCell: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: UIScreen.main.bounds.width, height: 54)
+  }
 }
