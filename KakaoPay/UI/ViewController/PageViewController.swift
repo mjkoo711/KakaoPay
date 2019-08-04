@@ -36,7 +36,8 @@ class PageViewController: UIPageViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
     setSearchBar()
-    KPLocationManager.sharedManager.checkLocationServices()
+    KPLocationManager.sharedManager.delegate = self
+    showCurrentWeather()
     self.delegate = self
     self.dataSource = self
     configurePageControl()
@@ -142,5 +143,15 @@ extension PageViewController: WeatherViewControllerDelegate {
       setViewControllers([PageViewController()], direction: .forward, animated: false)
       updatePageControl(numberOfPages: 0, currentPage: 0)
     }
+  }
+}
+
+extension PageViewController: KPLocationManagerDelegate {
+  func showCurrentWeather() {
+    KPLocationManager.sharedManager.checkLocationServices(onSuccess: { (location) in
+      // Todo
+    }, onFailure: {
+      // Todo
+    })
   }
 }

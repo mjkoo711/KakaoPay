@@ -161,7 +161,6 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
-				80CDEB4422F5F4BB0065A8A3 /* LocationHandler.swift */,
 				80CDEB3D22F5CC530065A8A3 /* Extensions */,
 				80CDEB2D22F47CB70065A8A3 /* UI */,
 				80CDEB2822F47A410065A8A3 /* Manager */,
@@ -238,6 +237,7 @@
 		80CDEB2822F47A410065A8A3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				80CDEB4422F5F4BB0065A8A3 /* LocationHandler.swift */,
 				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
 				80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */,
 				80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */,
