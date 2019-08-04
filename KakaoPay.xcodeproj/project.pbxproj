@@ -30,7 +30,7 @@
 		80CDEB3822F4AE950065A8A3 /* TimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */; };
 		80CDEB3A22F4BC5E0065A8A3 /* WeatherStateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */; };
 		80CDEB3F22F5CC640065A8A3 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB3E22F5CC640065A8A3 /* UserDefaultsExtensions.swift */; };
-		80CDEB4522F5F4BD0065A8A3 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB4422F5F4BB0065A8A3 /* LocationStorage.swift */; };
+		80CDEB4522F5F4BD0065A8A3 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CDEB4422F5F4BB0065A8A3 /* LocationHandler.swift */; };
 		E2213C3322F27B0D00042491 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3222F27B0D00042491 /* Request.swift */; };
 		E2213C3522F27B3800042491 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3422F27B3800042491 /* WeatherRequest.swift */; };
 		E2213C3822F27B7C00042491 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2213C3722F27B7C00042491 /* Weather.swift */; };
@@ -95,8 +95,7 @@
 		80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHandler.swift; sourceTree = "<group>"; };
 		80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStateHandler.swift; sourceTree = "<group>"; };
 		80CDEB3E22F5CC640065A8A3 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
-		80CDEB4222F5E87F0065A8A3 /* LocationStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
-		80CDEB4422F5F4BB0065A8A3 /* LocationStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
+		80CDEB4422F5F4BB0065A8A3 /* LocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		E2213C3222F27B0D00042491 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E2213C3422F27B3800042491 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		E2213C3722F27B7C00042491 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -162,7 +161,7 @@
 		80CDEADE22F1F3820065A8A3 /* KakaoPay */ = {
 			isa = PBXGroup;
 			children = (
-				80CDEB4222F5E87F0065A8A3 /* LocationStorage.swift */,
+				80CDEB4422F5F4BB0065A8A3 /* LocationHandler.swift */,
 				80CDEB3D22F5CC530065A8A3 /* Extensions */,
 				80CDEB2D22F47CB70065A8A3 /* UI */,
 				80CDEB2822F47A410065A8A3 /* Manager */,
@@ -239,7 +238,6 @@
 		80CDEB2822F47A410065A8A3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				80CDEB4422F5F4BB0065A8A3 /* LocationStorage.swift */,
 				E2D2A0D422F3DE990055735D /* KPLocationManager.swift */,
 				80CDEB3722F4AE950065A8A3 /* TimeHandler.swift */,
 				80CDEB3922F4BC5E0065A8A3 /* WeatherStateHandler.swift */,
@@ -446,7 +444,7 @@
 			files = (
 				80CDEB3022F4A2D00065A8A3 /* HourlyForecastTableViewCell.swift in Sources */,
 				E2D2A0DB22F4181E0055735D /* ResultTableViewController.swift in Sources */,
-				80CDEB4522F5F4BD0065A8A3 /* LocationStorage.swift in Sources */,
+				80CDEB4522F5F4BD0065A8A3 /* LocationHandler.swift in Sources */,
 				E2213C3F22F27BBD00042491 /* DailyWeather.swift in Sources */,
 				80CDEB1022F4773B0065A8A3 /* DailyForecastTableViewCell.swift in Sources */,
 				80CDEB2C22F47A7B0065A8A3 /* DailyForecastCollectionViewCell.swift in Sources */,

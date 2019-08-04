@@ -17,7 +17,7 @@ import UIKit
 
 class PageViewController: UIPageViewController {
   lazy var orderedViewControllers: [UIViewController] = {
-    let locations = LocationStorage().loadLocations()
+    let locations = LocationHandler().loadLocations()
     var viewControllers: [UIViewController] = []
     for location in locations {
       viewControllers.append(getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region))
