@@ -10,7 +10,9 @@ import Foundation
 import CoreLocation
 
 protocol KPLocationManagerDelegate {
-  func showCurrentWeather()
+  func showCurrentLocationWeather()
+  func isUpdateRequired(location: CLLocation) -> Bool
+  func dismissCurrentLocationWeatherViewController()
 }
 
 class KPLocationManager: NSObject {
@@ -37,7 +39,6 @@ class KPLocationManager: NSObject {
   }
   
   private func getLocation(onSuccess: @escaping (Location) -> (), onFailure: @escaping () -> ()) {
-    // TODO
     locationManager.requestLocation()
     guard let location = locationManager.location else {
       onFailure()
@@ -89,18 +90,22 @@ class KPLocationManager: NSObject {
 
 extension KPLocationManager: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    print(locations)
+    guard let delegate = delegate else { return }
+    if delegate.isUpdateRequired(location: locations[0]) {
+      delegate.showCurrentLocationWeather()
+    }
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     if status == .authorizedAlways || status == .authorizedWhenInUse {
-      // TODO: 화면 제일 처음에 현재 위치 보이게
-      delegate?.showCurrentWeather()
+      delegate?.showCurrentLocationWeather()
+    } else {
+      delegate?.dismissCurrentLocationWeatherViewController()
     }
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print(error)
+    print(error.localizedDescription)
   }
 }
 

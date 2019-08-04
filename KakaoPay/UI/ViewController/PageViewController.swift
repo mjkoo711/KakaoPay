@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PageViewController: UIPageViewController {
   lazy var orderedViewControllers: [UIViewController] = {
@@ -30,7 +31,7 @@ class PageViewController: UIPageViewController {
     view.backgroundColor = .white
     setSearchBar()
     KPLocationManager.sharedManager.delegate = self
-    showCurrentWeather()
+    showCurrentLocationWeather()
     self.delegate = self
     self.dataSource = self
     configurePageControl()
@@ -57,12 +58,14 @@ class PageViewController: UIPageViewController {
 
   }
 
-  private func getNewViewController(latitude: Double, longitude: Double, region: String) -> WeatherViewController {
+  private func getNewViewController(latitude: Double, longitude: Double, region: String, current: Bool = false) -> WeatherViewController {
     let weatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
 
     weatherViewController.latitude = latitude
     weatherViewController.longitude = longitude
     weatherViewController.region = region
+    weatherViewController.isCurrentLocation = current
+    
     weatherViewController.delegate = self
     return weatherViewController
   }
@@ -140,11 +143,45 @@ extension PageViewController: WeatherViewControllerDelegate {
 }
 
 extension PageViewController: KPLocationManagerDelegate {
-  func showCurrentWeather() {
+  func isUpdateRequired(location: CLLocation) -> Bool {
+    if let firstViewController = self.orderedViewControllers.first as? WeatherViewController, firstViewController.isCurrentLocation == true {
+      let newLatitude = ((location.coordinate.latitude * 100).rounded()) / 100
+      let newLongitude = ((location.coordinate.longitude * 100).rounded()) / 100
+      if let oldLatitude = firstViewController.latitude, let oldLongitude = firstViewController.longitude, oldLatitude == newLatitude, oldLongitude == newLongitude {
+        return false
+      } else { return true }
+    } else { return false }
+  }
+  
+  func showCurrentLocationWeather() {
     KPLocationManager.sharedManager.checkLocationServices(onSuccess: { (location) in
-      // Todo
+      if let firstViewController = self.orderedViewControllers.first as? WeatherViewController, firstViewController.isCurrentLocation == true {
+        self.orderedViewControllers.remove(at: 0)
+      }
+      
+      self.orderedViewControllers.insert(self.getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region, current: true), at: 0)
+      
+      if let firstViewController = self.orderedViewControllers.first {
+        DispatchQueue.main.async {
+          self.setViewControllers([firstViewController], direction: .forward, animated: false, completion: nil)
+          self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
+        }
+      }
     }, onFailure: {
       // Todo
     })
+  }
+  
+  func dismissCurrentLocationWeatherViewController() {
+    if let firstViewController = orderedViewControllers.first as? WeatherViewController, firstViewController.isCurrentLocation == true {
+      orderedViewControllers.remove(at: 0)
+      if orderedViewControllers.count == 0 {
+        setViewControllers([PageViewController()], direction: .forward, animated: false)
+        updatePageControl(numberOfPages: 0, currentPage: 0)
+      } else {
+        setViewControllers([firstViewController], direction: .forward, animated: false, completion: nil)
+        updatePageControl(numberOfPages: orderedViewControllers.count, currentPage: 0)
+      }
+    }
   }
 }

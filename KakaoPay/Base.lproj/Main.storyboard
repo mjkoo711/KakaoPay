@@ -76,11 +76,16 @@
                                                 <constraint firstAttribute="width" constant="24" id="a2T-XU-Lkp"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4U-XM-pft">
+                                            <rect key="frame" x="166.5" y="12" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="6DV-D8-gVv" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="3ve-SB-lMe"/>
-                                        <constraint firstItem="SWI-A7-OQg" firstAttribute="top" secondItem="hfj-AD-Jgj" secondAttribute="top" constant="48" id="6TM-aQ-C9Q"/>
                                         <constraint firstItem="6DV-D8-gVv" firstAttribute="top" secondItem="bSb-vf-QPz" secondAttribute="bottom" constant="32" id="7Xh-gA-umB"/>
                                         <constraint firstItem="Ojf-5K-gzx" firstAttribute="top" secondItem="hfj-AD-Jgj" secondAttribute="top" constant="8" id="81f-2Z-Rm8"/>
                                         <constraint firstItem="bSb-vf-QPz" firstAttribute="top" secondItem="8N7-NI-IhV" secondAttribute="bottom" constant="24" id="HmD-Fe-x5g"/>
@@ -91,6 +96,9 @@
                                         <constraint firstItem="wMk-gL-LPr" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="ZEh-mY-8z4"/>
                                         <constraint firstItem="8N7-NI-IhV" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="g6R-Vv-Wvr"/>
                                         <constraint firstItem="bSb-vf-QPz" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="hh6-sY-TSX"/>
+                                        <constraint firstItem="SWI-A7-OQg" firstAttribute="top" secondItem="w4U-XM-pft" secondAttribute="bottom" constant="15" id="i9L-SG-Hdd"/>
+                                        <constraint firstItem="w4U-XM-pft" firstAttribute="top" secondItem="hfj-AD-Jgj" secondAttribute="top" constant="12" id="oZv-iM-5ch"/>
+                                        <constraint firstItem="w4U-XM-pft" firstAttribute="centerX" secondItem="hfj-AD-Jgj" secondAttribute="centerX" id="vP1-E1-AmH"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="61F-Xg-bBR">
@@ -536,6 +544,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="apparentTemperatureLabel" destination="pOL-gI-Fw3" id="uRO-2f-Mpz"/>
+                        <outlet property="currentLocationLabel" destination="w4U-XM-pft" id="N3J-2E-E5d"/>
                         <outlet property="currentStateLabel" destination="8N7-NI-IhV" id="fMI-M0-TMB"/>
                         <outlet property="currentTemperatureLabel" destination="6DV-D8-gVv" id="qYe-XW-bIl"/>
                         <outlet property="deleteImageView" destination="Ojf-5K-gzx" id="MW5-9t-L5T"/>

@@ -16,8 +16,10 @@ class WeatherViewController: UIViewController {
   var latitude: Double?
   var longitude: Double?
   var region: String = ""
+  var isCurrentLocation = false
+  
   private var weather: Weather?
-  private var refreshControl = UIRefreshControl()
+  private var refreshControl: UIRefreshControl?
   
   @IBOutlet weak var regionLabel: UILabel!
   @IBOutlet weak var currentStateLabel: UILabel!
@@ -38,14 +40,17 @@ class WeatherViewController: UIViewController {
   @IBOutlet weak var deleteImageView: UIImageView!
   
   @IBOutlet weak var lastUpdateTimeLabel: UILabel!
+  @IBOutlet weak var currentLocationLabel: UILabel!
   
   var delegate: WeatherViewControllerDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if isCurrentLocation { currentLocationLabel.text = "현재 위치" }
+    refreshControl = UIRefreshControl()
     loadWeather()
     tableView.refreshControl = refreshControl
-    refreshControl.addTarget(self, action: #selector(refreshWeather), for: .valueChanged)
+    refreshControl?.addTarget(self, action: #selector(refreshWeather), for: .valueChanged)
     
     let deleteImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(removeViewController))
     deleteImageView.addGestureRecognizer(deleteImageTapGesture)
@@ -55,9 +60,9 @@ class WeatherViewController: UIViewController {
   @objc private func refreshWeather() {
     // DarkSky API에서 cache를 한시간 동안 잡아주기 때문에 클라이언트에서 처리해주어야 할 필요 X
     loadWeather {
-      self.refreshControl.endRefreshing()
+      self.refreshControl?.endRefreshing()
     }
-    refreshControl.endRefreshing()
+    refreshControl?.endRefreshing()
   }
 
   
