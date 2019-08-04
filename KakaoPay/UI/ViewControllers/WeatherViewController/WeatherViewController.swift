@@ -46,15 +46,18 @@ class WeatherViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    if isCurrentLocation { currentLocationLabel.text = "현재 위치" }
+    if isCurrentLocation {
+      currentLocationLabel.text = "현재 위치"
+      deleteImageView.image = nil
+    } else {
+      let deleteImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(removeViewController))
+      deleteImageView.addGestureRecognizer(deleteImageTapGesture)
+      deleteImageView.isUserInteractionEnabled = true
+    }
     refreshControl = UIRefreshControl()
     loadWeather()
     tableView.refreshControl = refreshControl
     refreshControl?.addTarget(self, action: #selector(refreshWeather), for: .valueChanged)
-    
-    let deleteImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(removeViewController))
-    deleteImageView.addGestureRecognizer(deleteImageTapGesture)
-    deleteImageView.isUserInteractionEnabled = true
   }
   
   @objc internal func refreshWeather() {
