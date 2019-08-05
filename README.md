@@ -1,15 +1,15 @@
 # Environment
 개발 하기 전에 설정한 스펙입니다.
-
-## Spec
+### Spec
  - macOS : **Mojave 10.14.6**
  - Xcode : **10.3**
  - Swift : **Swift 5**
  - Test Device : **iOS 12.4**
 
-## Weather API 
+### Weather API 
  - using [**Dark Sky API**](https://darksky.net/dev/docs)
 
+<br><br><br>
 
 # Structure
 Mode, Parser, Network에 대한 간략한 설명입니다. 
@@ -32,8 +32,7 @@ Mode, Parser, Network에 대한 간략한 설명입니다.
 3. **Request**에서 `최종 URL을 만든 뒤`, `HTTPS GET 요청`을 합니다. 그리고 Success 시 돌아오는 `response를 WeatherRequest로 전달`합니다. 
 4. **WeatherRequest**에서는 response를 Parser에 전달하여 `필요한 데이터만 파싱`하고, 그것들을 모두 모아 `Weather 객체를 생성`합니다. 
 5. 생성된 Weather 객체를 `WeatherVC에 전달`하고, WeatherVC는 그것을 UI로 그려줍니다. 
-
-
+<br><br><br>
 # Episode
 개발을 하면서 결정했야 했던 부분들에 대한 뒷 이야기입니다. 
 
@@ -119,7 +118,7 @@ places
 화면을 아래로 끌어당기면 날씨 데이터를 새로고침 할 수 있습니다. 
 처음에는 같은 위경도에 대해서 새로운 데이터를 계속 요청해서 업데이트 하는 것은 좋지 않다고 생각했습니다. 
 그래서 클라이언트에서 Cache를 만들어 1시간 정도 캐시데이터를 유지하려 하였습니다. 
-그러나, DarkAPI에서 요청한 데이터에 대해서는 한시간 정도 캐쉬를 유지하고 캐쉬값을 받아오고 있는 것을 아래와 같이 확인해서, 
+그러나, [DarkAPI](https://darksky.net/dev/docs#response-headers)에서 이미 요청한 데이터에 대해서는 **한시간 정도 캐쉬를 유지**하고 캐쉬값을 받아오고 있는 것을 아래와 같이 확인해서, 
 클라이언트 측에서는 refresh를 요청하면 그냥 darkAPI를 호출하기로 `결정`했습니다.
 
 ``` 
