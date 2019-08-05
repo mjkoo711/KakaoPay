@@ -1,4 +1,6 @@
-## Environment
+# Environment
+개발 하기 전에 설정한 스펙입니다.
+
 ### Spec
  - macOS : **Mojave 10.14.6**
  - Xcode : **10.3**
@@ -6,23 +8,22 @@
  - Test Device : **iOS 12.4**
 
 ### Weather API 
- - using **Dark Sky API**
+ - using [**Dark Sky API**](https://darksky.net/dev/docs)
 
 
-## Structure
-### Model
+# Structure
+Mode, Parser, Network에 대한 간략한 설명입니다. 
+
+## Model
 ![alt text](https://drive.google.com/uc?id=1rKx-oVV7u1S3WJ5CrwziiOJfKu5Pk_aN)
-
 - Weather 객체 안에 `latitude, longitude 프로퍼티`와 `CurrentlyWeather, HourlyWeather, DailyWeather 타입의 프로퍼티`로 구성되어 있습니다. 
 
-
-### Parser 
+## Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
 - `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 `parseWeatherData`를 호출합니다.
 - `parseCurrentlyWeather`의 파라미터에는 요청 데이터인 response의 `response["currently"]` 값을 전달합니다. 
 - `parseHourlyWeather`의 파라미터에는 요청 데이터인 response의 `response["hourly"]` 값을 전달합니다.
 - `parseDailyWeather`의 파라미터에는 요청 데이터인 response의 `response["daily"]` 값을 전달합니다.
-
 
 ### Network
 ![alt text](https://drive.google.com/uc?id=1uB1vH8btPMvx0s3tvEqoGJW89jNmRI8-)
@@ -33,9 +34,10 @@
 5. 생성된 Weather 객체를 `WeatherVC에 전달`하고, WeatherVC는 그것을 UI로 그려줍니다. 
 
 
+# Episode
+개발을 하면서 결정했야 했던 부분들에 대한 뒷 이야기입니다. 
 
-## Episode
-### Current Location's Latitude & Longitude
+## Current Location's Latitude & Longitude
 현재 위치가 업데이트 될 때, 기존 위/경도와 `소수점 둘째자리까지 같으면` 요청을 하지 않게 구성하였습니다.
 이유는 소수점 둘째자리까지가 약 `1km` 오차를 나타내는데 이 정도 오차는 현재 날씨가 동일할 것으로 판단했기 때문입니다.
 
@@ -55,8 +57,7 @@ places
 
 ```
 
-
-### Data Needed
+## Data Needed
 제가 앱을 구성하는데 필요로 했던 데이터는 아래 json 정도로 추렸습니다.
 ```json
 {
@@ -114,8 +115,7 @@ places
 }
 ```
 
-
-### Refresh (with Cache)
+## Refresh (with Cache)
 화면을 아래로 끌어당기면 날씨 데이터를 새로고침 할 수 있습니다. 
 처음에는 같은 위경도에 대해서 새로운 데이터를 계속 요청해서 업데이트 하는 것은 좋지 않다고 생각했습니다. 
 그래서 클라이언트에서 Cache를 만들어 1시간 정도 캐시데이터를 유지하려 하였습니다. 
