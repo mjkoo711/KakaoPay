@@ -1,13 +1,13 @@
 # Environment
 개발 하기 전에 설정한 스펙입니다.
 
-### Spec
+## Spec
  - macOS : **Mojave 10.14.6**
  - Xcode : **10.3**
  - Swift : **Swift 5**
  - Test Device : **iOS 12.4**
 
-### Weather API 
+## Weather API 
  - using [**Dark Sky API**](https://darksky.net/dev/docs)
 
 
@@ -25,7 +25,7 @@ Mode, Parser, Network에 대한 간략한 설명입니다.
 - `parseHourlyWeather`의 파라미터에는 요청 데이터인 response의 `response["hourly"]` 값을 전달합니다.
 - `parseDailyWeather`의 파라미터에는 요청 데이터인 response의 `response["daily"]` 값을 전달합니다.
 
-### Network
+## Network
 ![alt text](https://drive.google.com/uc?id=1uB1vH8btPMvx0s3tvEqoGJW89jNmRI8-)
 1. **WeatherVC**에서 WeatherRequest 객체를 생성하여 latitude, longitude와 함께 `WeatherRequest.request 메서드를 호출`합니다.
 2. **WeatherRequest**에서는 latitude, longitude를 받아서 `path를 만든 뒤`, Request 객체를 생성하여 path와 params와 함께 `Request.get 메서드를 호출`합니다.
