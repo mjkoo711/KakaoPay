@@ -59,7 +59,7 @@ extension PageViewController: WeatherViewControllerDelegate {
         self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
       }
     } else {
-      setViewControllers([PageViewController()], direction: .forward, animated: false)
+      setViewControllers([UIViewController()], direction: .forward, animated: false)
       updatePageControl(numberOfPages: 0, currentPage: 0)
     }
   }
@@ -91,7 +91,6 @@ extension PageViewController: KPLocationManagerDelegate {
         }
       }
     }, onFailure: {
-      // Todo
     })
   }
   
@@ -99,11 +98,13 @@ extension PageViewController: KPLocationManagerDelegate {
     if let firstViewController = orderedViewControllers.first as? WeatherViewController, firstViewController.isCurrentLocation == true {
       orderedViewControllers.remove(at: 0)
       if orderedViewControllers.count == 0 {
-        setViewControllers([PageViewController()], direction: .forward, animated: false)
+        setViewControllers([UIViewController()], direction: .forward, animated: false)
         updatePageControl(numberOfPages: 0, currentPage: 0)
       } else {
-        setViewControllers([orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
-        updatePageControl(numberOfPages: orderedViewControllers.count, currentPage: 0)
+        DispatchQueue.main.async {
+          self.setViewControllers([self.orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
+          self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
+        }
       }
     }
   }
