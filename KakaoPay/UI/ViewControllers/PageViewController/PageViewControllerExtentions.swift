@@ -16,7 +16,6 @@ extension PageViewController: ResultTableViewControllerDelegate {
     
     if let lastViewController = orderedViewControllers.last {
       setViewControllers([lastViewController], direction: .reverse, animated: false, completion: nil)
-      updatePageControl(numberOfPages: orderedViewControllers.count, currentPage: orderedViewControllers.count)
     }
   }
 }
@@ -40,13 +39,6 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
     
     return orderedViewControllers[nextIndex]
   }
-  
-  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-    let pageContentViewController = pageViewController.viewControllers![0]
-    pageControl.currentPage = orderedViewControllers.firstIndex(of: pageContentViewController)!
-    
-    // TODO: pageController의 backgroundColor 여기서 설정
-  }
 }
 
 extension PageViewController: WeatherViewControllerDelegate {
@@ -56,11 +48,9 @@ extension PageViewController: WeatherViewControllerDelegate {
     
     if let firstViewController = orderedViewControllers.first {
       setViewControllers([firstViewController], direction: .forward, animated: false) { (bool) in
-        self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
       }
     } else {
       setViewControllers([getEmptyViewController()], direction: .forward, animated: false)
-      updatePageControl(numberOfPages: 0, currentPage: 0)
     }
   }
 }
@@ -87,7 +77,6 @@ extension PageViewController: KPLocationManagerDelegate {
       if let firstViewController = self.orderedViewControllers.first {
         DispatchQueue.main.async {
           self.setViewControllers([firstViewController], direction: .forward, animated: false, completion: nil)
-          self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
         }
       }
     }, onFailure: {
@@ -99,11 +88,9 @@ extension PageViewController: KPLocationManagerDelegate {
       orderedViewControllers.remove(at: 0)
       if orderedViewControllers.count == 0 {
         setViewControllers([getEmptyViewController()], direction: .forward, animated: false)
-        updatePageControl(numberOfPages: 0, currentPage: 0)
       } else {
         DispatchQueue.main.async {
           self.setViewControllers([self.orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
-          self.updatePageControl(numberOfPages: self.orderedViewControllers.count, currentPage: 0)
         }
       }
     }

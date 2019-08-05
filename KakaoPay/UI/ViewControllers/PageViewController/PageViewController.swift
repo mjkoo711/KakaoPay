@@ -16,7 +16,6 @@ class PageViewController: UIPageViewController {
     return .lightContent
   }
   
-  var pageControl = UIPageControl()
   var resultSearchController: UISearchController? = nil
 
   override func viewDidLoad() {
@@ -34,7 +33,6 @@ class PageViewController: UIPageViewController {
     } else {
       setViewControllers([getEmptyViewController()], direction: .forward, animated: false, completion: nil)
     }
-    configurePageControl()
   }
   
   private func loadOrderedViewControllers() -> [UIViewController] {
@@ -79,20 +77,5 @@ class PageViewController: UIPageViewController {
     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EmptyViewController") as! EmptyViewController
     
     return viewController
-  }
-
-  internal func configurePageControl() {
-    pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 60, width: UIScreen.main.bounds.width, height: 8))
-    pageControl.numberOfPages = orderedViewControllers.count
-    pageControl.currentPage = 0
-    pageControl.tintColor = .blue
-    pageControl.pageIndicatorTintColor = .lightGray
-    pageControl.currentPageIndicatorTintColor = .blue
-    view.addSubview(pageControl)
-  }
-  
-  internal func updatePageControl(numberOfPages: Int, currentPage: Int) {
-    pageControl.numberOfPages = numberOfPages
-    pageControl.currentPage = currentPage
   }
 }
