@@ -64,7 +64,9 @@ class WeatherViewController: UIViewController {
   @objc internal func refreshWeather() {
     // DarkSky API에서 cache를 한시간 동안 잡아주기 때문에 클라이언트에서 처리해주어야 할 필요 X
     loadWeather {
-      self.refreshControl?.endRefreshing()
+      DispatchQueue.main.async {
+        self.refreshControl?.endRefreshing()
+      }
     }
     refreshControl?.endRefreshing()
   }

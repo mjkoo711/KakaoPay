@@ -31,6 +31,8 @@ class PageViewController: UIPageViewController {
 
     if let firstViewController = orderedViewControllers.first {
       setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+    } else {
+      setViewControllers([getEmptyViewController()], direction: .forward, animated: false, completion: nil)
     }
     configurePageControl()
   }
@@ -71,6 +73,12 @@ class PageViewController: UIPageViewController {
     
     weatherViewController.delegate = self
     return weatherViewController
+  }
+  
+  internal func getEmptyViewController() -> EmptyViewController {
+    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EmptyViewController") as! EmptyViewController
+    
+    return viewController
   }
 
   internal func configurePageControl() {
