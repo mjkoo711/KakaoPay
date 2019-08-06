@@ -56,37 +56,37 @@ class WeatherStateHandler {
     
     switch icon {
     case "clear-day":
-      stateString = "아주 좋은 낮이야~"
+      stateString = "쨍 하고 해뜰 날 돌아왔단다☀️"
       break
     case "sleet":
-      stateString = "진눈꺠비가 날릴거야~"
+      stateString = "진눈깨비 드륵드륵🥶"
       break
     case "fog":
-      stateString = "안개가 많이 꼈어~"
+      stateString = "안개 스믈스믈🌫"
       break
     case "partly-cloudy-night":
-      stateString = "구름이 조금 껴도 밤이라 괜찮아~"
+      stateString = "구름낀 밤이에요😎"
       break
     case "snow":
-      stateString = "눈이 펑펑 옵니다~"
+      stateString = "엘사 내한했나봐 눈온다🌨"
       break
     case "wind":
-      stateString = "바람이 불어오는 데~"
+      stateString = "바람 바람 바람🌬"
       break
     case "clear-night":
-      stateString = "아주 좋은 밤이야~"
+      stateString = "깨끗한 저녁하늘이에요🌕"
       break
     case "cloudy":
-      stateString = "구름이 많이 꼈어~"
+      stateString = "구름 구름 구름☁️"
       break
     case "partly-cloudy-day":
-      stateString = "구름이 껴서 햇빛은 피할거야~"
+      stateString = "구름 낀 하루⛅️"
       break
     case "rain":
-      stateString = "밖에 비온다 주룩주룩~"
+      stateString = "밖에 비온다 주룩주룩☔️"
       break
     default:
-      stateString = "날씨 정보를 안주네,,,"
+      stateString = "날씨 정보를 안주네,,,😅"
       break
     }
     
