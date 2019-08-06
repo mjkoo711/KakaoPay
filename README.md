@@ -16,20 +16,20 @@
 # Structure
 Mode, Parser, Network에 대한 설명입니다. 
 
-## Model
+### Model
 ![alt text](https://drive.google.com/uc?id=1rKx-oVV7u1S3WJ5CrwziiOJfKu5Pk_aN)
 - **Weather** 객체 안에 `latitude, longitude 프로퍼티`와 `CurrentlyWeather, HourlyWeather, DailyWeather 타입의 프로퍼티`로 구성되어 있습니다. 
 - **HourlyWeather, DailyWeather** 객체 안에는 여러개의 **WeatherData**가 리스트로 존재합니다. 
 - **Location** 객체는 latitude, longitude, regionName을 한번에 관리하기 위해 만든 모델입니다.
 
-## Parser 
+### Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
 - **parseCurrentlyWeather**의 파라미터에는 응답 response의 `response["currently"]` 값이 전달됩니다.
 - **parseHourlyWeather**의 파라미터에는 응답 response의 `response["hourly"]` 값이 전달됩니다.
 - **parseDailyWeather**의 파라미터에는 응답 response의 `response["daily"]` 값이 전달됩니다.
 - **parseWeatherData**는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
 
-## Network
+### Network
 ![alt text](https://drive.google.com/uc?id=1uB1vH8btPMvx0s3tvEqoGJW89jNmRI8-)
 1. **WeatherVC**에서 WeatherRequest 객체를 생성하여 latitude, longitude와 함께 `WeatherRequest.request 메서드를 호출`합니다.
 2. **WeatherRequest**에서는 latitude, longitude를 받아서 `path를 만든 뒤`, Request 객체를 생성하여 path와 params와 함께 `Request.get 메서드를 호출`합니다.
@@ -40,7 +40,7 @@ Mode, Parser, Network에 대한 설명입니다.
 # Episode
 개발을 하면서 스스로 정했던 것
 
-## Current Location's Latitude & Longitude
+### Current Location's Latitude & Longitude
 현재 위치가 업데이트 될 때, 기존 위치의 위/경도와 `소수점 둘째자리까지 같으면` 요청을 하지 않게 구성하였습니다.
 이유는 소수점 둘째자리까지가 약 `1km` 오차를 나타내는데 이 정도 오차는 현재 날씨가 동일할 것으로 판단했기 때문입니다.
 
@@ -60,7 +60,7 @@ places
 
 ```
 
-## Data Needed
+### Data Needed
 제가 앱을 구성하는데 필요로 했던 데이터는 아래 json 정도로 추렸습니다.
 ```json
 {
@@ -118,7 +118,7 @@ places
 }
 ```
 
-## Refresh (with Cache)
+### Refresh (with Cache)
 화면을 아래로 끌어당기면 날씨 데이터를 새로고침 할 수 있습니다. 
 처음에는 같은 위경도에 대해서 새로운 데이터를 계속 요청해서 업데이트 하는 것은 좋지 않다고 생각했습니다. 
 그래서 클라이언트에서 Cache를 만들어 1시간 정도 캐시데이터를 유지하려 하였습니다. 
