@@ -18,8 +18,8 @@ Mode, Parser, Network에 대한 설명입니다.
 
 ## Model
 ![alt text](https://drive.google.com/uc?id=1rKx-oVV7u1S3WJ5CrwziiOJfKu5Pk_aN)
-- Weather 객체 안에 `latitude, longitude 프로퍼티`와 `CurrentlyWeather, HourlyWeather, DailyWeather 타입의 프로퍼티`로 구성되어 있습니다. 
-- HourlyWeather, DailyWeather 객체 안에는 여러개의 **WeatherData**가 리스트로 존재합니다. 
+- **Weather** 객체 안에 `latitude, longitude 프로퍼티`와 `CurrentlyWeather, HourlyWeather, DailyWeather 타입의 프로퍼티`로 구성되어 있습니다. 
+- **HourlyWeather, DailyWeather** 객체 안에는 여러개의 **WeatherData**가 리스트로 존재합니다. 
 - **Location** 객체는 latitude, longitude, regionName을 한번에 관리하기 위해 만든 모델입니다.
 
 ## Parser 
