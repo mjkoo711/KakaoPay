@@ -9,6 +9,8 @@
  - Xcode : **10.3**
  - Swift : **Swift 5**
  - Test Device : **iOS 12.4**
+ 
+ => *디바이스(or Simulator)와 네트워크 상태에 따라 날씨를 불러오는 속도에 차이가 있을 수 있습니다.*
 
 ### Weather API 
  - using [**Dark Sky API**](https://darksky.net/dev/docs)
@@ -21,6 +23,8 @@ Mode, Parser, Network에 대한 간략한 설명입니다.
 ## Model
 ![alt text](https://drive.google.com/uc?id=1rKx-oVV7u1S3WJ5CrwziiOJfKu5Pk_aN)
 - Weather 객체 안에 `latitude, longitude 프로퍼티`와 `CurrentlyWeather, HourlyWeather, DailyWeather 타입의 프로퍼티`로 구성되어 있습니다. 
+- HourlyWeather, DailyWeather 객체 안에는 여러개의 **WeatherData**가 리스트로 존재합니다. 
+- **Location** 객체는 latitude, longitude, regionName을 한번에 관리하기 위해 만든 모델입니다.
 
 ## Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
