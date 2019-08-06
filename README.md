@@ -24,10 +24,10 @@ Mode, Parser, Network에 대한 설명입니다.
 
 ## Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
-- `parseWeatherData`는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
-- `parseCurrentlyWeather`의 파라미터에는 요청 데이터인 response의 `response["currently"]` 값을 전달합니다. 
-- `parseHourlyWeather`의 파라미터에는 요청 데이터인 response의 `response["hourly"]` 값을 전달합니다.
-- `parseDailyWeather`의 파라미터에는 요청 데이터인 response의 `response["daily"]` 값을 전달합니다.
+- **parseWeatherData**는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
+- **parseCurrentlyWeather**의 파라미터에는 응답 response의 `response["currently"]` 값이 전달됩니다.
+- **parseHourlyWeather**의 파라미터에는 응답 response의 `response["hourly"]` 값이 전달됩니다.
+- **parseDailyWeather**의 파라미터에는 응답 response의 `response["daily"]` 값이 전달됩니다.
 
 ## Network
 ![alt text](https://drive.google.com/uc?id=1uB1vH8btPMvx0s3tvEqoGJW89jNmRI8-)
@@ -38,7 +38,7 @@ Mode, Parser, Network에 대한 설명입니다.
 5. 생성된 Weather 객체를 `WeatherVC에 전달`하고, WeatherVC는 그것을 UI로 그려줍니다. 
 <br><br><br>
 # Episode
-개발을 하면서 결정했야 했던 부분들에 대한 뒷 이야기입니다. 
+개발을 하면서 스스로 정했던 것
 
 ## Current Location's Latitude & Longitude
 현재 위치가 업데이트 될 때, 기존 위/경도와 `소수점 둘째자리까지 같으면` 요청을 하지 않게 구성하였습니다.
