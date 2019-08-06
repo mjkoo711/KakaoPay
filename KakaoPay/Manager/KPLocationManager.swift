@@ -17,21 +17,21 @@ protocol KPLocationManagerDelegate {
 
 class KPLocationManager: NSObject {
   let locationManager: CLLocationManager
-  static let sharedManager = KPLocationManager()
+  static let shared = KPLocationManager()
   var delegate: KPLocationManagerDelegate?
   
   override private init() {
     locationManager = CLLocationManager()
   }
   
-  private func setupLocationManager() {
+  private func setUp() {
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
   }
   
   func checkLocationServices(onSuccess: @escaping (Location) -> (), onFailure: @escaping () -> ()) {
     if CLLocationManager.locationServicesEnabled() {
-      setupLocationManager()
+      setUp()
       checkLocationAuthorization(onSuccess: onSuccess, onFailure: onFailure)
     } else {
       

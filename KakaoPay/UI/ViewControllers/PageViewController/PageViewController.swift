@@ -23,7 +23,7 @@ class PageViewController: UIPageViewController {
     orderedViewControllers = loadOrderedViewControllers()
     view.setGradientLayer()
     setSearchBar()
-    KPLocationManager.sharedManager.delegate = self
+    KPLocationManager.shared.delegate = self
     showCurrentLocationWeather()
     self.delegate = self
     self.dataSource = self
@@ -36,7 +36,8 @@ class PageViewController: UIPageViewController {
   }
   
   private func loadOrderedViewControllers() -> [UIViewController] {
-    let locations = LocationHandler().loadLocations()
+    let storage = LocationStorage()
+    let locations = storage.loadLocations()
     var viewControllers: [UIViewController] = []
     for location in locations {
     viewControllers.append(getNewViewController(latitude: location.latitude, longitude: location.longitude, region: location.region))

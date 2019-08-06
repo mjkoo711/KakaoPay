@@ -9,5 +9,5 @@
 import Foundation
 
 enum Key {
-  static let DARK_API = "ff027595edc16310fecd5629043d0552"
+  static let DARK_SKY_API_KEY = "ff027595edc16310fecd5629043d0552"
 }

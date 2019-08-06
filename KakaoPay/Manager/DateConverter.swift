@@ -1,5 +1,5 @@
 //
-//  TimeHandler.swift
+//  DateConverter.swift
 //  KakaoPay
 //
 //  Created by 구민준 on 03/08/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimeHandler {
+class DateConverter {
   func convertTimeStampToMonthDay(timeStamp: Int) -> String {
     let date = Date(timeIntervalSince1970: Double(timeStamp))
     let dateFormatter = DateFormatter()

@@ -111,13 +111,13 @@ class WeatherViewController: UIViewController {
     windBearingLabel.text = WeatherStateHandler().changeWindBearingToDirection(windBearing: current.windBearing ?? 0)
     uvIndexLabel.text = "\(current.uvIndex ?? 0)"
     visibilityLabel.text = "\(current.visibility ?? 0)Km"
-    lastUpdateTimeLabel.text = "날씨 데이터 업데이트 시간 : " + TimeHandler().convertTimeStampToDateFormatter(timeStamp: current.time ?? 0)
+    lastUpdateTimeLabel.text = "날씨 데이터 업데이트 시간 : " + DateConverter().convertTimeStampToDateFormatter(timeStamp: current.time ?? 0)
   }
   
   @objc internal func removeViewController() {
-    let handler = LocationHandler()
+    let storage = LocationStorage()
     if let latitude = latitude, let longitude = longitude {
-      handler.removeLocation(location: Location(latitude: latitude, longitude: longitude, region: region))
+      storage.remove(location: Location(latitude: latitude, longitude: longitude, region: region))
     }
     delegate?.removeFromPageViewController(vc: self)
   }

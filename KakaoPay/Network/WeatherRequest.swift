@@ -11,7 +11,7 @@ import Foundation
 class WeatherRequest {
   func loadWeather(latitude: Double, longitude: Double, onSuccess: @escaping (Weather) -> (), onFailure: @escaping (Error?) -> ()) {
     let request = Request(baseURLString: Const.baseURL)
-    let path = "/forecast/" + Key.DARK_API + "/" + "\(latitude),\(longitude)"
+    let path = "/forecast/" + Key.DARK_SKY_API_KEY + "/" + "\(latitude),\(longitude)"
     let params = ["units": "si"]
     
     request.get(path: path, parameters: params) { (response, error) in

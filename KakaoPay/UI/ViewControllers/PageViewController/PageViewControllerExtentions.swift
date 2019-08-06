@@ -67,7 +67,7 @@ extension PageViewController: KPLocationManagerDelegate {
   }
   
   func showCurrentLocationWeather() {
-    KPLocationManager.sharedManager.checkLocationServices(onSuccess: { (location) in
+    KPLocationManager.shared.checkLocationServices(onSuccess: { (location) in
       if let firstViewController = self.orderedViewControllers.first as? WeatherViewController, firstViewController.isCurrentLocation == true {
         self.orderedViewControllers.remove(at: 0)
       }

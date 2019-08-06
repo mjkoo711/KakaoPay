@@ -1,5 +1,5 @@
 //
-//  LocationHandler.swift
+//  LocationStorage.swift
 //  KakaoPay
 //
 //  Created by 구민준 on 03/08/2019.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class LocationHandler {
-  func saveLocation(location newLocation: Location) {
+class LocationStorage {
+  func save(location newLocation: Location) {
     var locations = loadLocations()
     
     for location in locations {
@@ -20,7 +20,7 @@ class LocationHandler {
     updateLocations(locations: locations)
   }
   
-  func isExistLocation(location newLocation: Location) -> Bool {
+  func isExist(location newLocation: Location) -> Bool {
     let locations = loadLocations()
     
     for location in locations {
@@ -39,7 +39,7 @@ class LocationHandler {
     return locations ?? []
   }
   
-  func removeLocation(location: Location) {
+  func remove(location: Location) {
     var locations = loadLocations()
     
     for index in 0..<locations.count {

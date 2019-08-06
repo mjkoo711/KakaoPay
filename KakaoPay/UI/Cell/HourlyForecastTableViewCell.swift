@@ -36,14 +36,10 @@ extension HourlyForecastTableViewCell: UICollectionViewDelegate, UICollectionVie
     guard let weather = hourlyWeather else { return cell }
     let data = weather.hourlyData[indexPath.row]
     
-    cell.timeLabel.text = TimeHandler().convertTimeStampToHour(timeStamp: data.time ?? 0)
+    cell.timeLabel.text = DateConverter().convertTimeStampToHour(timeStamp: data.time ?? 0)
     cell.temperatureLabel.text = "\(data.temperature ?? 0)°C"
     cell.weatherImageView.image = UIImage(named: data.iconName ?? "")
     return cell
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("KOO")
   }
 }
 
