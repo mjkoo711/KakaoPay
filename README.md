@@ -24,10 +24,10 @@ Mode, Parser, Network에 대한 설명입니다.
 
 ## Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
-- **parseWeatherData**는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
 - **parseCurrentlyWeather**의 파라미터에는 응답 response의 `response["currently"]` 값이 전달됩니다.
 - **parseHourlyWeather**의 파라미터에는 응답 response의 `response["hourly"]` 값이 전달됩니다.
 - **parseDailyWeather**의 파라미터에는 응답 response의 `response["daily"]` 값이 전달됩니다.
+- **parseWeatherData**는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
 
 ## Network
 ![alt text](https://drive.google.com/uc?id=1uB1vH8btPMvx0s3tvEqoGJW89jNmRI8-)
