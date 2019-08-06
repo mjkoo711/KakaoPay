@@ -1,9 +1,5 @@
-#### 본 과제는 **카카오페이 채용전환형 인턴 iOS 개발 과제** 입니다. 
-#### 이메일 : mjkoo711@gmail.com 
-#### 이름 : 구민준
-
 # Environment
-개발 하기 전에 설정한 스펙입니다.
+개발에 사용된 **스펙 & API** 입니다
 ### Spec
  - macOS : **Mojave 10.14.6**
  - Xcode : **10.3**
@@ -18,7 +14,7 @@
 <br><br><br>
 
 # Structure
-Mode, Parser, Network에 대한 간략한 설명입니다. 
+Mode, Parser, Network에 대한 설명입니다. 
 
 ## Model
 ![alt text](https://drive.google.com/uc?id=1rKx-oVV7u1S3WJ5CrwziiOJfKu5Pk_aN)
@@ -28,7 +24,7 @@ Mode, Parser, Network에 대한 간략한 설명입니다.
 
 ## Parser 
 ![alt text](https://drive.google.com/uc?id=1ahga7IboBWEcn4QdoM-e0JQVRwTpAA4Y)
-- `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 `parseWeatherData`를 호출합니다.
+- `parseWeatherData`는 `parseCurrentlyWeather`, `parseHourlyWeather`, `parseDailyWeather` 메서드에서 호출됩니다.
 - `parseCurrentlyWeather`의 파라미터에는 요청 데이터인 response의 `response["currently"]` 값을 전달합니다. 
 - `parseHourlyWeather`의 파라미터에는 요청 데이터인 response의 `response["hourly"]` 값을 전달합니다.
 - `parseDailyWeather`의 파라미터에는 요청 데이터인 response의 `response["daily"]` 값을 전달합니다.
